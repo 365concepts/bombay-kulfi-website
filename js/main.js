@@ -422,9 +422,31 @@ const BK_MENU = [
   const isTouch = window.matchMedia('(hover: none)').matches;
 
   if (isTouch) {
-    // Mobile: autoplay loop
+    // Mobile: bounce (ping-pong) playback — forward then backward in loop
+    video.removeAttribute('loop');   // handle looping manually
     video.setAttribute('autoplay', '');
+    video.currentTime = 0;
     video.play().catch(() => {});
+
+    const STEP = 1 / 30; // ~30fps reverse step size
+    let reversing = false;
+
+    function reverseFrame() {
+      video.currentTime = Math.max(0, video.currentTime - STEP);
+      if (video.currentTime <= 0.04) {
+        reversing = false;
+        video.play().catch(() => {}); // play forward again
+      } else {
+        requestAnimationFrame(reverseFrame);
+      }
+    }
+
+    video.addEventListener('ended', () => {
+      if (!reversing) {
+        reversing = true;
+        requestAnimationFrame(reverseFrame);
+      }
+    });
     return;
   }
 

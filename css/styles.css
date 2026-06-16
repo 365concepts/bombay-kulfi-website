@@ -1001,9 +1001,31 @@ html, body {
   }
   .nav-mobile a.btn { align-self: flex-start; margin-top: 10px; padding: 13px 22px; }
 
-  /* Hero */
-  .hero-inner { min-height: 55vw; align-items: flex-end; }
-  .hero-copy  { padding: 36px 0 48px; max-width: 90%; }
+  /* Hero — content above, video below on mobile */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+  .hero-video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 52vw;
+    object-fit: cover;
+    order: 2;
+    opacity: 1;
+  }
+  .hero-inner {
+    order: 1;
+    position: relative;
+    min-height: auto;
+    align-items: flex-start;
+    background: var(--cream);
+    z-index: 1;
+  }
+  .hero-copy { padding: 36px 0 36px; max-width: 100%; }
+
 
   /* News bar */
   .news-bar-head { flex-direction: column; align-items: center; gap: 6px; text-align: center; margin-bottom: 22px; }
@@ -1051,7 +1073,7 @@ html, body {
     width: 130%;
     max-width: none;
     height: auto;
-    margin-left: -15%;
+    margin-left: calc(-15% - 100px);
     display: block;
     object-fit: contain;
   }
@@ -1092,6 +1114,7 @@ html, body {
     overflow-y: auto;
   }
   .showcase-art  { order: 1; min-height: 180px; padding: 16px 0 8px; }
+  .showcase-cat-img { width: 45%; }
   .showcase-card-right { order: 2; padding: 8px 24px 24px; }
   .showcase-menu { grid-template-columns: 1fr; gap: 24px; }
 
@@ -1107,6 +1130,8 @@ html, body {
 
   /* Footer */
   .footer-cols { grid-template-columns: 1fr; gap: 40px; }
+  .footer-logo { width: 280px; display: block; margin: 0 auto; }
+  .footer-top  { align-items: center; }
 }
 
 /* ========================================================
@@ -1116,7 +1141,7 @@ html, body {
   .founder-panel { padding: 28px 24px; gap: 20px; }
   .founder-panel-icon { width: 132px; height: 132px; }
   .showcase-card { max-height: 60vh; }
-  .franchise-video { width: 140%; max-width: none; margin-left: -20%; }
+  .franchise-video { width: 140%; max-width: none; margin-left: calc(-20% - 100px); }
 }
 
 /* ========================================================
@@ -1182,7 +1207,7 @@ html, body {
   .franchise-inner { padding: 40px 16px 24px; }
   .franchise-copy h2 { font-size: 24px; }
   .franchise-copy p  { font-size: 15px; margin: 14px 0 24px; }
-  .franchise-video   { width: 86%; max-width: 240px; }
+  .franchise-video   { width: 140%; max-width: none; margin-left: calc(-20% - 100px); }
 
   /* Store Locator */
   .locator { padding: 52px 0 68px; }
@@ -1222,7 +1247,7 @@ html, body {
   .showcase-arrow { width: 38px; height: 38px; font-size: 18px; }
 
   .franchise-copy h2 { font-size: 20px; }
-  .franchise-video { width: 150%; max-width: none; margin-left: -25%; }
+  .franchise-video { width: 150%; max-width: none; margin-left: calc(-25% - 100px); }
 
   /* Keep scrolled logo same size as normal mobile logo */
   .site-header.scrolled .nav-logo img { width: 86px; }
@@ -1230,6 +1255,6 @@ html, body {
   .zone-chips { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   #outlet-map { height: 340px; }
 
-  .footer-logo { width: 130px !important; }
+  .footer-logo { width: 220px !important; display: block; margin: 0 auto; }
 }
 
