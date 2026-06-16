@@ -764,7 +764,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   border: 2px solid var(--black);
   border-radius: 9px;
   box-shadow: 3px 3px 0 var(--black);
-  max-height: 565px;
+  max-height: 330px;
   overflow-y: auto;
   list-style: none;
   background: transparent;
@@ -881,15 +881,18 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   gap: 30px;
 }
 .footer-logo { width: 240px; }
-.footer-cta {
-  display: flex;
-  align-items: center;
-}
 .footer-sticker {
-  width: 150px;
-  margin-left: -22px;
+  width: 375px;
+  display: block;
+  margin: 0 auto 16px;
   position: relative;
   z-index: 1;
+}
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 .footer-cols {
   display: grid;
@@ -1048,10 +1051,10 @@ html, body {
   .franchise-copy { max-width: 600px; padding: 0; text-align: center; }
   .franchise-video {
     position: relative;
-    width: 85%;
-    max-width: 480px;
+    width: 130%;
+    max-width: none;
     height: auto;
-    margin: 0 0 0 auto;
+    margin-left: -15%;
     display: block;
     object-fit: contain;
   }
@@ -1116,7 +1119,7 @@ html, body {
   .founder-panel { padding: 28px 24px; gap: 20px; }
   .founder-panel-icon { width: 132px; height: 132px; }
   .showcase-card { max-height: 60vh; }
-  .franchise-video { width: 88%; max-width: 440px; }
+  .franchise-video { width: 140%; max-width: none; margin-left: -20%; }
 }
 
 /* ========================================================
@@ -1222,7 +1225,7 @@ html, body {
   .showcase-arrow { width: 38px; height: 38px; font-size: 18px; }
 
   .franchise-copy h2 { font-size: 20px; }
-  .franchise-video { width: 92%; max-width: 360px; margin: 0 0 0 auto; }
+  .franchise-video { width: 150%; max-width: none; margin-left: -25%; }
 
   /* Keep scrolled logo same size as normal mobile logo */
   .site-header.scrolled .nav-logo img { width: 86px; }
