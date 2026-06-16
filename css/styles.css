@@ -988,6 +988,8 @@ html, body {
   .nav-toggle { display: block; }
   .nav { justify-content: space-between; min-height: 76px; gap: 0; }
   .nav-logo img { width: 110px; }
+  /* Keep logo same size when scrolled on mobile */
+  .site-header.scrolled .nav-logo img { width: 110px; }
   .site-header.menu-open .nav-mobile {
     display: flex; flex-direction: column;
     gap: 4px; padding: 14px 20px 22px;
@@ -1015,7 +1017,7 @@ html, body {
   .founder-photo { width: 100%; }
   .founder-right { padding: 0; }
   .founder-panel { padding: 32px 32px; gap: 24px; align-items: center; }
-  .founder-panel-icon { width: 96px; height: 96px; }
+  .founder-panel-icon { width: 144px; height: 144px; }
   .founder-h { font-size: 22px; }
   .founder-origin, .founder-mission { font-size: 16px; }
   .pillar { font-size: 15px; }
@@ -1027,7 +1029,7 @@ html, body {
   /* Gulabo */
   .gulabo-copy { padding: 60px 0; }
 
-  /* Franchise — stack video below text */
+  /* Franchise — stack video below text, larger + right-aligned */
   .franchise {
     display: flex;
     flex-direction: column;
@@ -1046,15 +1048,15 @@ html, body {
   .franchise-copy { max-width: 600px; padding: 0; text-align: center; }
   .franchise-video {
     position: relative;
-    width: 72%;
-    max-width: 320px;
+    width: 85%;
+    max-width: 480px;
     height: auto;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     display: block;
     object-fit: contain;
   }
 
-  /* Showcase — arrow nav on mobile */
+  /* Showcase — arrow nav + image first, then menu items */
   .tabs { display: none; }
   .showcase-mobile-nav {
     display: flex;
@@ -1089,15 +1091,19 @@ html, body {
     max-height: 68vh;
     overflow-y: auto;
   }
-  .showcase-art  { order: 2; min-height: 180px; padding: 0 0 16px; }
-  .showcase-card-right { order: 1; padding: 28px 24px 0; }
+  .showcase-art  { order: 1; min-height: 180px; padding: 16px 0 8px; }
+  .showcase-card-right { order: 2; padding: 8px 24px 24px; }
   .showcase-menu { grid-template-columns: 1fr; gap: 24px; }
+
 
   /* Store Locator */
   .locator { padding: 70px 0 90px; }
   .locator .section-h { margin-bottom: 48px; }
   .locator-grid { grid-template-columns: 1fr; gap: 40px; }
-  #outlet-map   { height: 460px; }
+  .locator-controls { width: 100%; box-sizing: border-box; overflow: hidden; }
+  .locator-input { box-sizing: border-box; width: 100%; }
+  .zone-chips { max-width: 100%; width: 100%; box-sizing: border-box; }
+  #outlet-map { height: 460px; }
 
   /* Footer */
   .footer-cols { grid-template-columns: 1fr; gap: 40px; }
@@ -1108,9 +1114,9 @@ html, body {
    ======================================================== */
 @media (max-width: 768px) {
   .founder-panel { padding: 28px 24px; gap: 20px; }
-  .founder-panel-icon { width: 88px; height: 88px; }
+  .founder-panel-icon { width: 132px; height: 132px; }
   .showcase-card { max-height: 60vh; }
-  .franchise-video { width: 80%; max-width: 280px; }
+  .franchise-video { width: 88%; max-width: 440px; }
 }
 
 /* ========================================================
@@ -1146,7 +1152,7 @@ html, body {
   .founder-quote { font-size: 20px; line-height: 1.4; }
   .founder-photo-wrap { max-width: 260px; }
   .founder-panel { flex-direction: column; text-align: center; padding: 26px 16px; gap: 14px; }
-  .founder-panel-icon { width: 80px; height: 80px; }
+  .founder-panel-icon { width: 120px; height: 120px; }
   .founder-h  { font-size: 20px; }
   .founder-origin, .founder-mission { font-size: 15px; line-height: 1.55; }
   .pillar { font-size: 14px; line-height: 1.5; }
@@ -1155,7 +1161,7 @@ html, body {
   .milk { padding: 60px 0 76px; }
   .milk-h   { font-size: 24px; }
   .milk-sub { font-size: 16px; }
-  .milk-col-icon { height: 140px; }
+  .milk-col-icon { height: 210px; }
   .milk-cols { grid-template-columns: 1fr; gap: 48px; }
   .milk-col h3 { font-size: 18px; }
   .milk-col p  { font-size: 15px; }
@@ -1207,7 +1213,7 @@ html, body {
   .hero-copy h1 { font-size: 26px; }
   .hero-sub { font-size: 16px; }
 
-  .founder-panel-icon { width: 72px; height: 72px; }
+  .founder-panel-icon { width: 108px; height: 108px; }
   .founder-h { font-size: 18px; }
   .founder-quote { font-size: 18px; }
   .founder-photo-wrap { max-width: 220px; }
@@ -1216,7 +1222,10 @@ html, body {
   .showcase-arrow { width: 38px; height: 38px; font-size: 18px; }
 
   .franchise-copy h2 { font-size: 20px; }
-  .franchise-video { width: 92%; max-width: 200px; }
+  .franchise-video { width: 92%; max-width: 360px; margin: 0 0 0 auto; }
+
+  /* Keep scrolled logo same size as normal mobile logo */
+  .site-header.scrolled .nav-logo img { width: 86px; }
 
   .zone-chips { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   #outlet-map { height: 340px; }
