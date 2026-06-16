@@ -538,6 +538,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   margin: 0 auto;
 }
 
+/* ============ Showcase mobile arrow nav (hidden on desktop) ============ */
+.showcase-mobile-nav {
+  display: none;
+}
+
 /* ============ Showcase tabs ============ */
 .tabs-wrap {
   display: flex;
@@ -937,17 +942,25 @@ a:focus-visible, button:focus-visible, input:focus-visible {
    Responsive
    ========================================================================== */
 
+/* ---- Global overflow guard ---- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---- Showcase mobile arrow nav — hidden on desktop ---- */
+.showcase-mobile-nav { display: none; }
+
 /* ---- Remove all hover effects on touch devices ---- */
 @media (hover: none) {
-  .btn:hover                        { transform: none; }
+  .btn:hover                   { transform: none; }
   .btn-orange:hover,
-  .btn-cream:hover                  { box-shadow: var(--shadow-pop); }
-  .chip:hover                       { transform: none; box-shadow: 3px 3px 0 var(--black); }
-  .tab:hover                        { color: #D8D4C4; }
-  .founder-panel-icon:hover         { transform: none; }
-  .nav-links a:hover:not(.btn)      { font-size: 18px; color: var(--black); }
-  .news-ticker img:hover            { opacity: 1; }
-  .footer-contacts a:hover          { text-decoration: none; }
+  .btn-cream:hover             { box-shadow: var(--shadow-pop); }
+  .chip:hover                  { transform: none; box-shadow: 3px 3px 0 var(--black); }
+  .tab:hover                   { color: #D8D4C4; }
+  .founder-panel-icon:hover    { transform: none; }
+  .nav-links a:hover:not(.btn) { font-size: 18px; color: var(--black); }
+  .footer-contacts a:hover     { text-decoration: none; }
 }
 
 /* ---- 1380px ---- */
@@ -963,48 +976,50 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   .showcase-menu { gap: 32px; }
 }
 
-/* ---- 1024px — tablet / mobile nav breakpoint ---- */
+/* ========================================================
+   1024px — tablet / mobile nav
+   ======================================================== */
 @media (max-width: 1024px) {
-  :root { --header-h: 122px; }
+  :root { --header-h: 120px; }
   html  { scroll-padding-top: var(--header-h); }
 
   /* Nav */
-  .nav-links { display: none; }
+  .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: block; }
-  .nav { justify-content: space-between; min-height: 80px; gap: 0; }
-  .nav-center { display: none; }
-  .nav-cta    { display: none; }
+  .nav { justify-content: space-between; min-height: 76px; gap: 0; }
   .nav-logo img { width: 110px; }
   .site-header.menu-open .nav-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 14px 24px 26px;
-    border-top: 1px solid rgba(34,31,31,.15);
+    display: flex; flex-direction: column;
+    gap: 4px; padding: 14px 20px 22px;
+    border-top: 1px solid rgba(34,31,31,.12);
   }
   .nav-mobile a {
-    font: 700 18px var(--font-sans);
-    color: var(--black);
-    text-decoration: none;
-    padding: 11px 0;
+    font: 700 17px var(--font-sans);
+    color: var(--black); text-decoration: none; padding: 10px 0;
   }
-  .nav-mobile a.btn { align-self: flex-start; margin-top: 10px; padding: 14px 24px; }
+  .nav-mobile a.btn { align-self: flex-start; margin-top: 10px; padding: 13px 22px; }
 
   /* Hero */
-  .hero-inner { min-height: 60vw; align-items: flex-end; }
-  .hero-copy  { padding: 40px 0 50px; }
+  .hero-inner { min-height: 55vw; align-items: flex-end; }
+  .hero-copy  { padding: 36px 0 48px; max-width: 90%; }
 
   /* News bar */
-  .news-bar-head { flex-direction: column; align-items: center; gap: 8px; text-align: center; }
-  .news-h   { font-size: 30px; }
-  .news-sub { font-size: 17px; }
+  .news-bar-head { flex-direction: column; align-items: center; gap: 6px; text-align: center; margin-bottom: 22px; }
+  .news-h  { font-size: 28px; }
+  .news-sub { font-size: 16px; }
 
-  /* Founder */
+  /* Our Story / Founder */
   .founder { grid-template-columns: 1fr; }
-  .founder-left  { padding: 70px 40px 0; }
+  .founder-left  { padding: 60px 32px 0; }
+  .founder-photo-wrap { max-width: 340px; margin: 24px auto 0; }
+  .founder-photo { width: 100%; }
   .founder-right { padding: 0; }
-  .founder-panel { padding: 36px 40px; gap: 28px; }
-  .founder-panel-icon { width: 80px; height: 80px; }
+  .founder-panel { padding: 32px 32px; gap: 24px; align-items: center; }
+  .founder-panel-icon { width: 96px; height: 96px; }
+  .founder-h { font-size: 22px; }
+  .founder-origin, .founder-mission { font-size: 16px; }
+  .pillar { font-size: 15px; }
+  .founder-quote { font-size: 24px; }
 
   /* Milk */
   .milk-cols { gap: 60px; }
@@ -1012,146 +1027,200 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   /* Gulabo */
   .gulabo-copy { padding: 60px 0; }
 
-  /* Franchise */
-  .franchise-inner { justify-content: center; }
-  .franchise-copy  { padding: 60px 0; text-align: center; max-width: 600px; margin: 0 auto; }
+  /* Franchise — stack video below text */
+  .franchise {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+  .franchise-inner {
+    position: relative;
+    z-index: 1;
+    min-height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 56px 24px 32px;
+    gap: 0;
+  }
+  .franchise-copy { max-width: 600px; padding: 0; text-align: center; }
+  .franchise-video {
+    position: relative;
+    width: 72%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
 
-  /* Showcase */
-  .showcase-card { grid-template-columns: 1fr; }
-  .showcase-art  { order: 2; min-height: 200px; padding: 0 0 16px; }
-  .showcase-card-right { order: 1; }
+  /* Showcase — arrow nav on mobile */
+  .tabs { display: none; }
+  .showcase-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #2E4A14;
+    border-radius: 14px 14px 0 0;
+    padding: 14px 20px;
+    width: 100%;
+  }
+  .showcase-arrow {
+    background: rgba(255,255,255,.12);
+    border: 1.5px solid rgba(248,187,0,.5);
+    color: #F8BB00;
+    font-size: 22px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .showcase-cat-label {
+    font: italic 700 18px/1.2 var(--font-sans);
+    color: #F8BB00;
+    text-align: center;
+    flex: 1;
+    padding: 0 12px;
+  }
+  .showcase-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    max-height: 68vh;
+    overflow-y: auto;
+  }
+  .showcase-art  { order: 2; min-height: 180px; padding: 0 0 16px; }
+  .showcase-card-right { order: 1; padding: 28px 24px 0; }
+  .showcase-menu { grid-template-columns: 1fr; gap: 24px; }
 
-  /* Locator */
-  .locator-grid { grid-template-columns: 1fr; }
-  #outlet-map   { height: 480px; }
+  /* Store Locator */
+  .locator { padding: 70px 0 90px; }
+  .locator .section-h { margin-bottom: 48px; }
+  .locator-grid { grid-template-columns: 1fr; gap: 40px; }
+  #outlet-map   { height: 460px; }
 
   /* Footer */
-  .footer-cols { grid-template-columns: 1fr; gap: 45px; }
+  .footer-cols { grid-template-columns: 1fr; gap: 40px; }
 }
 
-/* ---- 640px — small tablet / large phone ---- */
+/* ========================================================
+   768px — large phones
+   ======================================================== */
+@media (max-width: 768px) {
+  .founder-panel { padding: 28px 24px; gap: 20px; }
+  .founder-panel-icon { width: 88px; height: 88px; }
+  .showcase-card { max-height: 60vh; }
+  .franchise-video { width: 80%; max-width: 280px; }
+}
+
+/* ========================================================
+   640px — small phones
+   ======================================================== */
 @media (max-width: 640px) {
-  :root { --header-h: 100px; }
+  :root { --header-h: 96px; }
 
   /* Global */
-  .section-h    { font-size: 30px; }
-  .btn          { font-size: 15px; padding: 14px 22px; }
+  .section-h { font-size: 28px; line-height: 1.18; }
+  .btn { font-size: 15px; padding: 14px 20px; }
+  .container, .container-wide { padding: 0 16px; }
 
   /* Topbar */
-  .topbar p { font-size: 12px; letter-spacing: .4px; }
+  .topbar p { font-size: 12px; letter-spacing: .3px; }
 
   /* Hero */
-  .hero-copy h1 { font-size: 34px; line-height: 1.18; }
-  .hero-sub     { font-size: 19px; }
-  .hero-body    { font-size: 16px; }
-  .hero-ctas    { flex-direction: column; gap: 14px; }
+  .hero-inner { min-height: 85vw; align-items: center; }
+  .hero-copy  { padding: 30px 0 40px; max-width: 100%; }
+  .hero-copy h1 { font-size: 30px; line-height: 1.2; }
+  .hero-sub  { font-size: 18px; margin-top: 14px; }
+  .hero-body { font-size: 16px; margin-top: 12px; }
+  .hero-ctas { flex-direction: column; gap: 12px; margin-top: 24px; }
   .hero-ctas .btn { width: 100%; text-align: center; }
 
   /* News */
-  .news-h   { font-size: 26px; }
-  .news-sub { font-size: 15px; }
-  .news-ticker img { height: 44px; margin-right: 56px; }
-
-  /* Founder */
-  .founder-left  { padding: 50px 24px 0; }
-  .founder-quote { font-size: 22px; }
-  .founder-panel { flex-direction: column; text-align: center; padding: 32px 24px; gap: 16px; }
-  .founder-panel-icon { width: 72px; height: 72px; }
-  .founder-h    { font-size: 21px; }
-  .founder-origin, .founder-mission { font-size: 15px; }
-  .pillar       { font-size: 14px; }
-
-  /* Milk */
-  .milk-h  { font-size: 28px; }
-  .milk-sub { font-size: 18px; }
-  .milk-col-icon { height: 160px; }
-  .milk-cols { grid-template-columns: 1fr; gap: 56px; }
-  .milk-col h3 { font-size: 20px; }
-  .milk-col p  { font-size: 16px; }
-
-  /* Gulabo */
-  .gulabo-copy h2 { font-size: 26px; }
-  .gulabo-copy p  { font-size: 16px; max-width: 90vw; }
-
-  /* Showcase */
-  .showcase-h   { font-size: 30px; }
-  .tab          { font-size: 15px; padding: 12px 14px; max-width: 120px; }
-  .showcase-menu { grid-template-columns: 1fr; gap: 28px; }
-  .menu-col h3  { font-size: 18px; }
-  .menu-col li  { font-size: 15px; }
-  .showcase-card-right { padding: 28px 24px 0; }
-
-  /* Franchise */
-  .franchise-copy h2 { font-size: 28px; }
-  .franchise-copy p  { font-size: 16px; }
-  .franchise-inner   { min-height: 480px; }
-  .franchise         { min-height: 480px; }
-
-  /* Locator */
-  .locator .section-h { font-size: 26px; }
-  .locator-label { font-size: 17px; }
-  .zone-chips { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .chip { font-size: 14px; height: 42px; }
-  .locator-input { font-size: 16px; height: 48px; }
-  .locator-list .outlet-city { font-size: 15px; }
-  .locator-list .outlet-addr { font-size: 12px; }
-
-  /* Footer */
-  .footer-top     { flex-direction: column; align-items: flex-start; gap: 30px; }
-  .footer-strip-inner { flex-direction: column; gap: 4px; }
-  .footer-strip p { font-size: 14px; }
-  .footer-cols    { padding-top: 10px; }
-}
-
-/* ---- 480px — small phones ---- */
-@media (max-width: 480px) {
-  :root { --header-h: 90px; }
-
-  /* Nav */
-  .nav-logo img { width: 90px; }
-  .nav { min-height: 64px; }
-
-  /* Hero */
-  .hero-copy h1 { font-size: 28px; }
-  .hero-sub     { font-size: 17px; margin-top: 14px; }
-  .hero-body    { font-size: 15px; margin-top: 12px; }
-  .hero-ctas    { margin-top: 28px; }
-
-  /* News */
-  .news-bar { padding: 24px 0 0; }
   .news-h   { font-size: 22px; }
   .news-sub { font-size: 14px; }
-  .news-ticker img { height: 36px; margin-right: 44px; }
+  .news-ticker img { height: 38px; margin-right: 48px; }
 
-  /* Founder */
-  .founder-quote { font-size: 19px; }
-  .founder-panel-icon { width: 60px; height: 60px; }
-  .founder-h { font-size: 19px; }
+  /* Our Story */
+  .founder-left  { padding: 44px 16px 0; }
+  .founder-quote { font-size: 20px; line-height: 1.4; }
+  .founder-photo-wrap { max-width: 260px; }
+  .founder-panel { flex-direction: column; text-align: center; padding: 26px 16px; gap: 14px; }
+  .founder-panel-icon { width: 80px; height: 80px; }
+  .founder-h  { font-size: 20px; }
+  .founder-origin, .founder-mission { font-size: 15px; line-height: 1.55; }
+  .pillar { font-size: 14px; line-height: 1.5; }
 
   /* Milk */
-  .milk-h  { font-size: 24px; }
-  .section-h { font-size: 26px; }
+  .milk { padding: 60px 0 76px; }
+  .milk-h   { font-size: 24px; }
+  .milk-sub { font-size: 16px; }
+  .milk-col-icon { height: 140px; }
+  .milk-cols { grid-template-columns: 1fr; gap: 48px; }
+  .milk-col h3 { font-size: 18px; }
+  .milk-col p  { font-size: 15px; }
 
   /* Gulabo */
   .gulabo-copy h2 { font-size: 22px; }
-  .gulabo-inner   { align-items: flex-end; padding-bottom: 40px; }
+  .gulabo-copy p  { font-size: 15px; max-width: 88vw; margin: 16px 0 22px; }
+  .gulabo-inner   { align-items: flex-end; padding-bottom: 32px; }
 
   /* Showcase */
-  .showcase-h { font-size: 26px; margin-bottom: 28px; }
-  .tabs       { border-radius: 10px 10px 0 0; padding: 0 8px; }
-  .tab        { font-size: 13px; padding: 10px 10px; max-width: 100px; }
+  .showcase { padding: 52px 0 68px; }
+  .showcase-h { font-size: 26px; margin-bottom: 24px; }
+  .showcase-cat-label { font-size: 16px; }
+  .menu-col h3 { font-size: 16px; }
+  .menu-col li { font-size: 14px; }
 
   /* Franchise */
+  .franchise-inner { padding: 40px 16px 24px; }
   .franchise-copy h2 { font-size: 24px; }
-  .franchise-inner   { min-height: 380px; }
-  .franchise         { min-height: 380px; }
+  .franchise-copy p  { font-size: 15px; margin: 14px 0 24px; }
+  .franchise-video   { width: 86%; max-width: 240px; }
 
-  /* Locator */
-  .locator { padding: 60px 0 80px; }
-  .zone-chips { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  #outlet-map { height: 380px; }
+  /* Store Locator */
+  .locator { padding: 52px 0 68px; }
+  .locator .section-h { font-size: 22px; margin-bottom: 32px; }
+  .locator-label { font-size: 16px; }
+  .locator-input { font-size: 15px; height: 46px; }
+  .zone-chips { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .chip { font-size: 13px; height: 40px; }
+  .locator-list .outlet-city { font-size: 15px; }
+  .locator-list .outlet-addr { font-size: 12px; }
+  #outlet-map { height: 400px; }
 
   /* Footer */
-  .footer-logo { width: 160px !important; }
+  .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; padding-top: 44px; }
+  .footer-strip-inner { flex-direction: column; gap: 4px; }
+  .footer-strip p { font-size: 13px; }
+}
+
+/* ========================================================
+   480px — small phones
+   ======================================================== */
+@media (max-width: 480px) {
+  :root { --header-h: 86px; }
+
+  .nav-logo img { width: 86px; }
+  .nav { min-height: 60px; }
+
+  .hero-copy h1 { font-size: 26px; }
+  .hero-sub { font-size: 16px; }
+
+  .founder-panel-icon { width: 72px; height: 72px; }
+  .founder-h { font-size: 18px; }
+  .founder-quote { font-size: 18px; }
+  .founder-photo-wrap { max-width: 220px; }
+
+  .showcase-h { font-size: 22px; }
+  .showcase-arrow { width: 38px; height: 38px; font-size: 18px; }
+
+  .franchise-copy h2 { font-size: 20px; }
+  .franchise-video { width: 92%; max-width: 200px; }
+
+  .zone-chips { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  #outlet-map { height: 340px; }
+
+  .footer-logo { width: 130px !important; }
 }
 

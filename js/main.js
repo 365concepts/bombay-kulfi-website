@@ -159,15 +159,16 @@ const BK_MENU = [
 ];
 
 (function () {
-  const tabBar   = document.querySelector('.tabs');
-  const artEl    = document.querySelector('.showcase-art');
-  const menuEl   = document.querySelector('.showcase-menu');
+  const tabBar    = document.querySelector('.tabs');
+  const artEl     = document.querySelector('.showcase-art');
+  const menuEl    = document.querySelector('.showcase-menu');
   const taglineEl = document.querySelector('.showcase-tagline');
+
+  let currentIdx = 0;
 
   function renderMenu(index) {
     const category = BK_MENU[index];
 
-    // --- Category image ---
     artEl.innerHTML = '';
     const img = document.createElement('img');
     img.src = category.image;
@@ -175,10 +176,8 @@ const BK_MENU = [
     img.className = 'showcase-cat-img';
     artEl.appendChild(img);
 
-    // --- Tagline ---
     if (taglineEl) taglineEl.textContent = category.tagline || '';
 
-    // --- Menu columns ---
     menuEl.innerHTML = '';
     menuEl.style.setProperty('--menu-cols', Math.min(category.columns.length, 3));
 
@@ -191,14 +190,12 @@ const BK_MENU = [
         h3.textContent = col.title;
         colEl.appendChild(h3);
       }
-
       if (col.subtitle) {
         const sub = document.createElement('p');
         sub.className = 'col-sub';
         sub.textContent = col.subtitle;
         colEl.appendChild(sub);
       }
-
       const ul = document.createElement('ul');
       col.items.forEach((item) => {
         const li = document.createElement('li');
@@ -216,23 +213,49 @@ const BK_MENU = [
     });
   }
 
+  function navigateTo(idx) {
+    currentIdx = (idx + BK_MENU.length) % BK_MENU.length;
+    tabBar.querySelectorAll('.tab').forEach((t, i) => {
+      t.classList.toggle('is-active', i === currentIdx);
+      t.setAttribute('aria-selected', String(i === currentIdx));
+    });
+    if (catLabel) catLabel.textContent = BK_MENU[currentIdx].tab;
+    renderMenu(currentIdx);
+  }
+
+  // Build desktop tab buttons
   BK_MENU.forEach((category, i) => {
     const btn = document.createElement('button');
     btn.className = 'tab' + (i === 0 ? ' is-active' : '');
     btn.setAttribute('role', 'tab');
     btn.setAttribute('aria-selected', String(i === 0));
     btn.textContent = category.tab;
-    btn.addEventListener('click', () => {
-      tabBar.querySelectorAll('.tab').forEach((t) => {
-        t.classList.remove('is-active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      btn.classList.add('is-active');
-      btn.setAttribute('aria-selected', 'true');
-      renderMenu(i);
-    });
+    btn.addEventListener('click', () => navigateTo(i));
     tabBar.appendChild(btn);
   });
+
+  // Build mobile arrow nav
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'showcase-arrow showcase-arrow-prev';
+  prevBtn.setAttribute('aria-label', 'Previous category');
+  prevBtn.innerHTML = '&#8592;';
+
+  const catLabel = document.createElement('span');
+  catLabel.className = 'showcase-cat-label';
+  catLabel.textContent = BK_MENU[0].tab;
+
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'showcase-arrow showcase-arrow-next';
+  nextBtn.setAttribute('aria-label', 'Next category');
+  nextBtn.innerHTML = '&#8594;';
+
+  const mobileNav = document.createElement('div');
+  mobileNav.className = 'showcase-mobile-nav';
+  mobileNav.append(prevBtn, catLabel, nextBtn);
+  tabBar.parentNode.insertBefore(mobileNav, tabBar);
+
+  prevBtn.addEventListener('click', () => navigateTo(currentIdx - 1));
+  nextBtn.addEventListener('click', () => navigateTo(currentIdx + 1));
 
   renderMenu(0);
 })();
