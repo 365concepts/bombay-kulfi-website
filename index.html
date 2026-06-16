@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bombay Kulfi Ice Creams — The Pioneers of Asli Kulfi</title>
+  <meta name="description" content="Bombay Kulfi rescued honest, slow-churned Indian street kulfi. 100% A2 buffalo milk, zero preservatives, 56+ flavours across 100+ stores in India & Singapore.">
+  <meta property="og:title" content="Bombay Kulfi Ice Creams — Blast From The Past">
+  <meta property="og:description" content="We didn't reinvent Kulfi. We rescued it. 100% A2 Buffalo Milk, zero preservatives, pure unadulterated nostalgia.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo-header.png">
+  <link rel="icon" type="image/png" href="assets/logo-footer.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Sriracha&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Reusable starburst seal badge -->
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="seal-badge" viewBox="0 0 120 120">
+      <polygon class="seal-shape" fill="currentColor" points="60,0 66,6.3 73.4,1.5 77.8,9 86,5.9 88.7,14.3 97.4,13.1 98.2,21.8 106.9,22.6 105.7,31.3 114.1,34 111,42.2 118.5,46.6 113.7,54 120,60 113.7,66 118.5,73.4 111,77.8 114.1,86 105.7,88.7 106.9,97.4 98.2,98.2 97.4,106.9 88.7,105.7 86,114.1 77.8,111 73.4,118.5 66,113.7 60,120 54,113.7 46.6,118.5 42.2,111 34,114.1 31.3,105.7 22.6,106.9 21.8,98.2 13.1,97.4 14.3,88.7 5.9,86 9,77.8 1.5,73.4 6.3,66 0,60 6.3,54 1.5,46.6 9,42.2 5.9,34 14.3,31.3 13.1,22.6 21.8,21.8 22.6,13.1 31.3,14.3 34,5.9 42.2,9 46.6,1.5 54,6.3"/>
+      <path id="seal-arc-top" d="M 23 60 A 37 37 0 0 1 97 60" fill="none"/>
+      <path id="seal-arc-bot" d="M 18 60 A 42 42 0 0 0 102 60" fill="none"/>
+      <text class="seal-arc-text"><textPath href="#seal-arc-top" startOffset="50%" text-anchor="middle">JHAKAAS</textPath></text>
+      <text class="seal-num" x="60" y="73" text-anchor="middle">56+</text>
+      <text class="seal-arc-text"><textPath href="#seal-arc-bot" startOffset="50%" text-anchor="middle">FLAVOURS</textPath></text>
+    </symbol>
+  </svg>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+  <div class="topbar">
+    <p>100+ Stores &nbsp;&bull;&nbsp; 56+ Flavors &nbsp;&bull;&nbsp; India &amp; Singapore</p>
+  </div>
+    <nav class="nav container-wide" aria-label="Main navigation">
+      <a class="nav-logo" href="#top" aria-label="Bombay Kulfi Ice Creams — home">
+        <img src="assets/logo-header.png" alt="Bombay Kulfi Ice Creams" width="210" height="128">
+      </a>
+      <ul class="nav-links nav-center">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#flavours">Explore Flavours</a></li>
+        <li><a href="#franchise">Franchise Advantage</a></li>
+        <li><a class="nav-gulabo" href="#gulabo">Gulabo's World</a></li>
+        <li><a href="#locator">Store Locator</a></li>
+      </ul>
+      <a class="btn btn-orange btn-nav nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSetGuhEL93w-iGZwlferFy9vFJ7Xa3SUbOMYJT4FGew6f7img/viewform" target="_blank" rel="noopener">Own a Franchise</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile">
+      <a href="#about">Our Story</a>
+      <a href="#flavours">Explore Flavours</a>
+      <a href="#franchise">Franchise Advantage</a>
+      <a class="nav-gulabo" href="#gulabo">Gulabo's World</a>
+      <a href="#locator">Store Locator</a>
+      <a class="btn btn-orange" href="https://docs.google.com/forms/d/e/1FAIpQLSetGuhEL93w-iGZwlferFy9vFJ7Xa3SUbOMYJT4FGew6f7img/viewform" target="_blank" rel="noopener">Own a Franchise</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <video class="hero-video" muted loop playsinline preload="auto">
+      <source src="assets/video-hero.mp4" type="video/mp4">
+    </video>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Blast From The Past:<br>Rediscovering Childhood&nbsp;Joy.</h1>
+        <p class="hero-sub">We didn't reinvent Kulfi. We rescued it.</p>
+        <p class="hero-body">Every Stick, Every Slice, and Every Scoop is slow-churned with 100% pure A2 Buffalo Milk. No preservatives, no additives, just pure unadulterated nostalgia.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-orange" href="#locator">Find Your Nearest Outlet</a>
+          <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSetGuhEL93w-iGZwlferFy9vFJ7Xa3SUbOMYJT4FGew6f7img/viewform" target="_blank" rel="noopener">Partner with Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IN THE NEWS ============ -->
+  <section class="news-bar" id="news">
+    <div class="container news-bar-head">
+      <h2 class="news-h">In the News</h2>
+      <p class="news-sub">Making Headlines &amp; Winning Hearts!</p>
+    </div>
+    <div class="news-ticker-wrap" aria-hidden="true">
+      <div class="news-ticker">
+        <img src="assets/0.png"         alt="">
+        <img src="assets/1BBC.png"      alt="BBC">
+        <img src="assets/2.png"         alt="">
+        <img src="assets/3CURLY.png"    alt="Curly Tales">
+        <img src="assets/4.png"         alt="">
+        <img src="assets/5HINDU.png"    alt="The Hindu">
+        <img src="assets/6.png"         alt="">
+        <img src="assets/7INDIANEX.png" alt="Indian Express">
+        <img src="assets/8.png"         alt="">
+        <img src="assets/91TOI.png"     alt="Times of India">
+        <img src="assets/9TELE.png"     alt="The Telegraph">
+        <img src="assets/AW6.png"       alt="">
+        <!-- Duplicate for seamless loop -->
+        <img src="assets/0.png"         alt="">
+        <img src="assets/1BBC.png"      alt="">
+        <img src="assets/2.png"         alt="">
+        <img src="assets/3CURLY.png"    alt="">
+        <img src="assets/4.png"         alt="">
+        <img src="assets/5HINDU.png"    alt="">
+        <img src="assets/6.png"         alt="">
+        <img src="assets/7INDIANEX.png" alt="">
+        <img src="assets/8.png"         alt="">
+        <img src="assets/91TOI.png"     alt="">
+        <img src="assets/9TELE.png"     alt="">
+        <img src="assets/AW6.png"       alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER & MISSION ============ -->
+  <section class="founder" id="about">
+    <div class="founder-left">
+      <div class="founder-quote-wrap">
+        <blockquote class="founder-quote">&ldquo;Bombay Kulfi Ice Creams is&nbsp;not my business. It's my pyaar. My&nbsp;true calling.&rdquo;</blockquote>
+        <p class="founder-credit">Manish Kankaria, Founder</p>
+      </div>
+      <div class="founder-photo-wrap">
+        <img class="founder-photo" src="assets/founder-manish.webp" alt="Manish Kankaria, founder of Bombay Kulfi Ice Creams, with Gulabo on his shoulder" width="540" height="524">
+      </div>
+    </div>
+    <div class="founder-right">
+      <div class="founder-panel">
+        <img class="founder-panel-icon" src="assets/karnataka.svg" alt="">
+        <div class="founder-panel-body">
+          <h2 class="founder-h">Founded in Coimbatore</h2>
+          <p class="founder-origin">Born out of a refusal to accept chemical-stuffed modern &ldquo;ice creams&rdquo;. We went back to the streets of our childhood &ndash; using heritage recipes, slow-churning on real wood fibers, and capturing wild Indian flavors like saffron, gulkand, and real mango.</p>
+        </div>
+      </div>
+      <div class="founder-panel">
+        <img class="founder-panel-icon" src="assets/gulabo-approved.png" alt="">
+        <div class="founder-panel-body">
+          <h2 class="founder-h">Our Mission</h2>
+          <p class="founder-mission">&ldquo;To spread happiness and nostalgia by offering authentic Indian Kulfi &amp; Ice Creams made with the absolute finest ingredients and a heavy touch of playful innovation.&rdquo;</p>
+        </div>
+      </div>
+      <div class="founder-panel">
+        <img class="founder-panel-icon" src="assets/A2.svg" alt="">
+        <div class="founder-panel-body">
+          <h2 class="founder-h">Our Core Pillars</h2>
+          <p class="pillar"><strong>Authenticity First:</strong> True to our roots. Just like R.K. Laxman's Common Man, we keep things honest, simple, and unpretentious.</p>
+          <p class="pillar"><strong>Uncompromising Quality:</strong> Made without preservatives, stabilizer gels, or synthetic colors. True quality doesn't need chemical makeup.</p>
+          <p class="pillar"><strong>Pure A2 Creaminess:</strong> Sourced from local Murrah and Surti buffaloes. High fat (6-8%) means the milk caramelizes naturally into deep, golden ribbons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOT ALL MILK IS CREATED EQUAL ============ -->
+  <section class="milk" id="purity">
+    <div class="container">
+      <h2 class="section-h milk-h">Not All Milk Is Created Equal.</h2>
+      <p class="milk-sub">Walk into any outlet and you'll notice a richness that lingers. That's not an accident. That's a non-negotiable.</p>
+      <div class="milk-cols">
+        <div class="milk-col">
+          <img class="milk-col-icon" src="assets/a2-gulabo.png" alt="A2 Buffalo Milk illustration">
+          <h3>What is A2 Buffalo Milk?</h3>
+          <p>Unlike commercial dairy cows, Indian Murrah and Surti buffaloes produce pure A2 milk, completely lacking the A1 beta-casein mutation. At a natural 6% to 8% fat content, it boils down further without curdling, developing a caramelized, butterscotch-like flavor that industrial dairies have forgotten how to achieve.</p>
+        </div>
+        <div class="milk-col">
+          <img class="milk-col-icon" src="assets/no-khoya.png" alt="Zero Khoya Promise illustration">
+          <h3>The Zero-Khoya Promise:</h3>
+          <p>Many modern brands speed up production by adding artificial thickening agents, khoya substitutes, or high-sugar milk solids. We stand firm: No khoya. No milk powder. No stabilizers. EVER.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEET GULABO ============ -->
+  <section class="gulabo" id="gulabo">
+    <video class="gulabo-video" autoplay muted loop playsinline>
+      <source src="assets/Gulabo-Walk.mp4" type="video/mp4">
+    </video>
+    <div class="container gulabo-inner">
+      <div class="gulabo-copy">
+        <h2 class="section-h">Meet Gulabo:<br>The Sassiest Buffalo On The&nbsp;Block!</h2>
+        <p>Gulabo is the face, heart, and unofficial quality controller of Bombay Kulfi Ice Creams. She doesn't shy away from the spotlight, and she certainly doesn't compromise on Quality.</p>
+        <a class="btn btn-cream" href="#locator">Find Gulabo Near You</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT SHOWCASE ============ -->
+  <section class="showcase" id="flavours">
+    <div class="container-wide">
+      <h2 class="showcase-h" id="showcase-heading">The Product Showcase</h2>
+      <div class="showcase-frame">
+        <div class="tabs" role="tablist" aria-label="Product categories"></div>
+        <div class="showcase-card">
+          <div class="showcase-art" aria-hidden="true"></div>
+          <div class="showcase-card-right">
+            <div class="showcase-menu"></div>
+            <p class="showcase-tagline"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRANCHISE ============ -->
+  <section class="franchise" id="franchise">
+    <video class="franchise-video" autoplay loop muted playsinline>
+      <source src="assets/FRANCH-GULABO.mp4" type="video/mp4">
+    </video>
+    <div class="container franchise-inner">
+      <div class="franchise-copy">
+        <h2 class="section-h">The Jhakaas Franchise Opportunity</h2>
+        <p>A royalty-free, high-yielding business model that pays for itself in under 15 months. Completely chef-less store management with 100% centralized Mumbai manufacturing supply chain.</p>
+        <a class="btn btn-orange btn-serif" href="https://docs.google.com/forms/d/e/1FAIpQLSetGuhEL93w-iGZwlferFy9vFJ7Xa3SUbOMYJT4FGew6f7img/viewform" target="_blank" rel="noopener">Own a Franchise</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORE LOCATOR ============ -->
+  <section class="locator" id="locator">
+    <div class="container">
+      <h2 class="section-h">Find Your Nearest Asli Spot (100+&nbsp;Outlets)</h2>
+      <div class="locator-grid">
+        <div class="locator-controls">
+          <label class="locator-label" for="locator-search">Filter by Name / City</label>
+          <input class="locator-input" id="locator-search" type="text" autocomplete="off" placeholder="">
+          <p class="locator-label">Zonal Regional Filters</p>
+          <div class="zone-chips" role="group" aria-label="Filter outlets by zone">
+            <button class="chip is-active" data-zone="all">All</button>
+            <button class="chip" data-zone="north">North</button>
+            <button class="chip" data-zone="south">South</button>
+            <button class="chip" data-zone="east">East</button>
+            <button class="chip" data-zone="west">West</button>
+            <button class="chip" data-zone="int">Int.</button>
+          </div>
+          <p class="locator-label">Matching Locations (<span id="locator-count">0</span>)</p>
+          <ul class="locator-list" id="locator-list"></ul>
+        </div>
+        <div class="locator-map">
+          <div id="outlet-map" aria-label="Map of Bombay Kulfi outlets"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <img class="footer-logo" src="assets/logo-footer.png" alt="BK Ice Creams" width="240" height="167">
+      <div class="footer-cta">
+        <a class="btn btn-orange btn-serif" href="https://docs.google.com/forms/d/e/1FAIpQLSetGuhEL93w-iGZwlferFy9vFJ7Xa3SUbOMYJT4FGew6f7img/viewform" target="_blank" rel="noopener">Own a Franchise Now</a>
+        <img class="footer-sticker" src="assets/gulabo-approved.png" alt="Gulabo Approved" width="150" height="148">
+      </div>
+    </div>
+    <div class="container footer-cols">
+      <div class="footer-about">
+        <p>Founded in Coimbatore, BK is on a delicious mission: to rescue honest slow-churned Indian street kulfi and ice creams made without artificial preservatives.</p>
+        <p>Headquarter: Coimbatore &nbsp;&bull;&nbsp; Factory: Mumbai</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#about">About Manish Kankaria</a>
+        <a href="#purity">Purity A2 Milk Facts</a>
+        <a href="#flavours">Product Catalog 56+Flavors</a>
+        <a href="#franchise">Royalty Free Franchise Options</a>
+        <a href="#locator">Outlets India Singapore</a>
+      </div>
+      <div class="footer-contacts">
+        <h3>Contacts</h3>
+        <p>Email: <a href="mailto:hello@bombaykulfi.com">hello@bombaykulfi.com</a></p>
+        <p>Franchise Enquiries: <a href="tel:+916356000042">+91 63560 00042</a></p>
+        <p>For party orders contact your nearest store</p>
+      </div>
+    </div>
+    <div class="footer-strip">
+      <div class="container footer-strip-inner">
+        <p>&copy; 2026 Bombay Kulfi. All Rights Reserved.</p>
+        <p>Approved By Gulaabo (Head Of Happiness Operations)</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="js/outlets-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
