@@ -486,26 +486,38 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 /* ============ Meet Gulabo ============ */
 .gulabo {
   position: relative;
+  background-color: #e9a6c7;
   overflow: hidden;
+  min-height: 700px;
 }
 .gulabo-video {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 62%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
   z-index: 0;
+  display: block;
 }
 .gulabo-inner {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: 1;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  min-height: 700px;
 }
-.gulabo-copy { padding: 115px 0 120px; }
+.gulabo-copy {
+  max-width: 480px;
+  padding: 115px 0 135px;
+}
 .gulabo-copy p {
   font: 400 19px/1.6 var(--font-serif);
-  max-width: 540px;
+  max-width: 460px;
   margin: 28px 0 38px;
 }
 
@@ -1051,8 +1063,33 @@ html, body {
   /* Milk */
   .milk-cols { gap: 60px; }
 
-  /* Gulabo */
-  .gulabo-copy { padding: 60px 0; }
+  /* Gulabo — stack video below content on mobile (mirrors franchise) */
+  .gulabo {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+  .gulabo-video {
+    position: relative;
+    width: 130%;
+    max-width: none;
+    height: auto;
+    margin-left: -15%;
+    display: block;
+    object-fit: contain;
+    order: 2;
+  }
+  .gulabo-inner {
+    position: relative;
+    z-index: 1;
+    min-height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 56px 24px 32px;
+    order: 1;
+  }
+  .gulabo-copy { max-width: 600px; padding: 0; text-align: center; }
 
   /* Franchise — stack video below text, larger + right-aligned */
   .franchise {
@@ -1195,9 +1232,9 @@ html, body {
   .milk-col p  { font-size: 15px; }
 
   /* Gulabo */
+  .gulabo-inner   { padding: 40px 16px 24px; }
   .gulabo-copy h2 { font-size: 22px; }
   .gulabo-copy p  { font-size: 15px; max-width: 88vw; margin: 16px 0 22px; }
-  .gulabo-inner   { align-items: flex-end; padding-bottom: 32px; }
 
   /* Showcase */
   .showcase { padding: 52px 0 68px; }
