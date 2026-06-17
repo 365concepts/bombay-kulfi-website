@@ -1110,10 +1110,10 @@ html, body {
   .franchise-copy { max-width: 600px; padding: 0; text-align: center; }
   .franchise-video {
     position: relative;
-    width: 130%;
-    max-width: none;
+    width: 85%;
+    max-width: 380px;
     height: auto;
-    margin-left: calc(-15% - 100px);
+    margin: 0 auto;
     display: block;
     object-fit: contain;
   }
@@ -1172,6 +1172,7 @@ html, body {
   .footer-cols { grid-template-columns: 1fr; gap: 40px; }
   .footer-logo { width: 280px; display: block; margin: 0 auto; }
   .footer-top  { align-items: center; }
+  .footer { padding-top: 44px; }
 }
 
 /* ========================================================
@@ -1181,7 +1182,7 @@ html, body {
   .founder-panel { padding: 28px 24px; gap: 20px; }
   .founder-panel-icon { width: 132px; height: 132px; }
   .showcase-card { max-height: 60vh; }
-  .franchise-video { width: 140%; max-width: none; margin-left: calc(-20% - 100px); }
+  .franchise-video { width: 85%; max-width: 360px; margin: 0 auto; }
 }
 
 /* ========================================================
@@ -1247,7 +1248,7 @@ html, body {
   .franchise-inner { padding: 40px 16px 24px; }
   .franchise-copy h2 { font-size: 24px; }
   .franchise-copy p  { font-size: 15px; margin: 14px 0 24px; }
-  .franchise-video   { width: 140%; max-width: none; margin-left: calc(-20% - 100px); }
+  .franchise-video   { width: 85%; max-width: 340px; margin: 0 auto; }
 
   /* Store Locator */
   .locator { padding: 52px 0 68px; }
@@ -1261,7 +1262,7 @@ html, body {
   #outlet-map { height: 400px; }
 
   /* Footer */
-  .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; padding-top: 44px; }
+  .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; padding-top: 20px; }
   .footer-strip-inner { flex-direction: column; gap: 4px; }
   .footer-strip p { font-size: 13px; }
 }
@@ -1287,7 +1288,7 @@ html, body {
   .showcase-arrow { width: 38px; height: 38px; font-size: 18px; }
 
   .franchise-copy h2 { font-size: 20px; }
-  .franchise-video { width: 150%; max-width: none; margin-left: calc(-25% - 100px); }
+  .franchise-video { width: 85%; max-width: 300px; margin: 0 auto; }
 
   /* Keep scrolled logo same size as normal mobile logo */
   .site-header.scrolled .nav-logo img { width: 86px; }
