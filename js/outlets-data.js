@@ -476,9 +476,9 @@ const BK_OUTLETS = [
 
   /* ── Singapore ──────────────────────────────────────────────── */
   {
-    name: 'Singapore', city: 'Singapore', state: 'Singapore', zone: 'south',
-    address: 'WhatsApp Orders: +65 9169 9081 | Grab Mart, Food Panda | Lazada, Amazon',
-    maps: '', status: 'Open Now',
+    name: 'Singapore', city: 'Singapore', state: 'Singapore', zone: 'int',
+    address: 'For Direct WhatsApp Orders: +65 9169 9081\nFor Instant Delivery: Grab Mart, Food Panda\nFor Online Marketplaces: Lazada, Amazon',
+    maps: 'https://maps.app.goo.gl/fi6akouk94RyKQCA8', status: 'Open Now',
     lat: 1.352, lng: 103.820
   }
 

@@ -175,29 +175,31 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: 22px;
 }
 
-/* "Gulabo's World" — disabled, shows Coming Soon on hover */
-.nav-gulabo {
-  position: relative;
-  cursor: not-allowed !important;
+/* Gulabo's World — disabled, static "Coming Soon" label */
+.li-gulabo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  list-style: none;
 }
-.nav-gulabo:hover {
-  color: transparent !important;
-  font-style: normal !important;
-}
-.nav-gulabo::before {
-  content: 'Coming Soon';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
+.nav-coming-soon {
+  font: italic 400 10px var(--font-serif);
   color: var(--orange-btn);
-  font: italic 700 22px var(--font-sans);
-  opacity: 0;
+  line-height: 1;
+  letter-spacing: .3px;
   pointer-events: none;
-  transition: opacity .15s;
+  margin-bottom: 0;
 }
-.nav-gulabo:hover::before { opacity: 1; }
+.nav-gulabo {
+  cursor: not-allowed !important;
+  opacity: .85;
+}
+/* Block the font-size grow + colour shift that .nav-links a:hover applies */
+.nav-links a.nav-gulabo:hover {
+  color: var(--black) !important;
+  font-size: 18px !important;
+}
 .btn-nav { padding: 12px 22px; box-shadow: 3px 3px 0 var(--black); }
 .nav-logo { z-index: 5; }
 .nav-logo img {
@@ -220,7 +222,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   background: var(--black);
   margin: 5px 0;
   border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
 }
+/* Burger → X when menu is open */
+.site-header.menu-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.site-header.menu-open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.site-header.menu-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 .nav-mobile { display: none; }
 
 /* ============ Hero ============ */
@@ -505,7 +512,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 /* ============ Meet Gulabo ============ */
 .gulabo {
   position: relative;
-  background-color: #edadc5;
+  background-color: #e87ab4;
   overflow: hidden;
   min-height: 700px;
 }
