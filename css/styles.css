@@ -885,7 +885,22 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .bk-popup-link:hover { text-decoration: underline; }
 
-/* Status badge + clickable rows */
+.footer-social-head {
+  font: 700 21px var(--font-sans);
+  color: var(--orange-btn);
+  margin: 28px 0 12px;
+}
+.footer-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream);
+  text-decoration: none;
+  font: italic 400 18px/1.4 var(--font-serif);
+  transition: color .2s;
+}
+.footer-ig-link:hover { color: #e1306c; }
+.footer-ig-link svg { width: 22px; height: 22px; flex-shrink: 0; }
 .badge-soon {
   display: inline-block;
   font: 700 11px var(--font-sans);
@@ -1014,7 +1029,7 @@ html, body {
    1024px — tablet / mobile nav
    ======================================================== */
 @media (max-width: 1024px) {
-  :root { --header-h: 120px; }
+  :root { --header-h: 110px; }
   html  { scroll-padding-top: var(--header-h); }
 
   /* Nav */
@@ -1036,6 +1051,13 @@ html, body {
   .nav-mobile a.btn { align-self: flex-start; margin-top: 10px; padding: 13px 22px; }
 
   /* Hero — podcast image on top, content below on mobile */
+  .hero {
+    background-image: repeating-conic-gradient(
+      from 0deg at 50% 36vw,
+      #f2eee5 0deg 8deg,
+      #ece6dc 8deg 16deg
+    );
+  }
   .hero-inner {
     flex-direction: column;
     justify-content: flex-start;
@@ -1063,7 +1085,8 @@ html, body {
 
 
   /* News bar */
-  .news-bar-head { flex-direction: column; align-items: center; gap: 6px; text-align: center; margin-bottom: 22px; }
+  .news-bar { padding: 16px 0 0; }
+  .news-bar-head { flex-direction: column; align-items: center; gap: 4px; text-align: center; margin-bottom: 12px; }
   .news-h  { font-size: 28px; }
   .news-sub { font-size: 16px; }
 
