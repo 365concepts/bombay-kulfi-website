@@ -43,8 +43,9 @@ const BK_MENU = [
       {
         title: 'Sticks',
         items: ['Malai', 'Kesar Pista', 'Mango', 'Badam Pista', 'Pista', 'Chocolate',
-          'Black Currant', 'Butterscotch', 'Strawberry', 'Mango Gulkand 2 in 1',
-          'Choco Strawberry 2 in 1', 'Rangeela 4 in 1']
+          'Black Currant', 'Butterscotch', 'Strawberry', 'Paan Masala',
+          'Mango Gulkand 2 in 1', 'Choco Strawberry 2 in 1', 'Rangeela 4 in 1',
+          'High Protein Malai']
       },
       {
         title: 'Slice',
@@ -66,30 +67,18 @@ const BK_MENU = [
       {
         title: 'Double Scoops — Cup or Waffle Cone',
         items: [
-          'Tender Coconut',
-          { name: 'Tender Coconut', note: 'Sugar Free' },
-          'Calcutta Paan',
-          { name: 'Calcutta Paan', note: 'Sugar Free' },
-          'Chocochip',
-          { name: 'Chocochip', note: 'Sugar Free' },
-          'Shahi Gulab',
-          'Anjeer',
-          'Oreo',
-          'Roasted Almond'
+          'Tender Coconut', { name: 'Tender Coconut', note: 'Sugar Free' },
+          'Calcutta Paan', { name: 'Calcutta Paan', note: 'Sugar Free' },
+          'Chocochip', { name: 'Chocochip', note: 'Sugar Free' },
+          'Shahi Gulab', 'Anjeer', 'Oreo', 'Roasted Almond'
         ]
       },
       {
         title: '',
         items: [
-          'Bubble Gum Jelly',
-          'Salted Caramel',
-          'Crunchy Caramel',
-          'Black Chocolate',
-          'Blueberry Cheese Cake',
-          'Vietnamese Coffee',
-          'Lotus Biscoff',
-          'Madagascar Vanilla',
-          'Curry Leaves'
+          'Bubble Gum Jelly', 'Salted Caramel', 'Crunchy Caramel', 'Black Chocolate',
+          'Blueberry Cheese Cake', 'Vietnamese Coffee', 'Lotus Biscoff',
+          'Madagascar Vanilla', 'Curry Leaves'
         ]
       }
     ]
@@ -151,12 +140,12 @@ const BK_MENU = [
     columns: [
       {
         title: 'Sundaes',
-        items: ['Jelly Belly', 'Tiramisu', 'Cookie Monster',
-          'Death By Chocolate', 'Chocoland']
+        items: ['Jelly Belly', 'Tiramisu', 'Cookie Monster', 'Death By Chocolate', 'Chocoland']
       }
     ]
   }
 ];
+
 
 (function () {
   const tabBar    = document.querySelector('.tabs');

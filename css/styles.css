@@ -232,12 +232,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   background-image: repeating-conic-gradient(
     from 0deg at 72% 50%,
     #f2eee5 0deg 8deg,
-    #e3d7c3 8deg 16deg
+    #ece6dc 8deg 16deg
   );
 }
 .hero-inner {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   min-height: 820px;
   gap: 60px;
@@ -248,18 +248,22 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   max-width: 580px;
   flex-shrink: 0;
   padding: 90px 0 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-podcast-link {
   flex-shrink: 0;
-  display: block;
+  display: flex;
+  align-items: center;
   transition: transform .25s ease;
 }
 .hero-podcast-link:hover { transform: scale(1.025) translateY(-6px); }
 .hero-podcast {
   display: block;
+  height: 100%;
   width: auto;
-  max-height: 700px;
-  max-width: 460px;
+  max-width: 500px;
   object-fit: contain;
   border-radius: 12px;
 }
