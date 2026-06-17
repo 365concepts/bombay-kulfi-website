@@ -1,3 +1,15 @@
+/* Force the page to start from the beginning on refresh/load */
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
 /* ==========================================================================
    Bombay Kulfi — Landing page interactions
    1. Mobile nav toggle
