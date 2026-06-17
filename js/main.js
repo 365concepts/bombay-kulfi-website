@@ -527,12 +527,21 @@ const BK_MENU = [
   const header = document.querySelector('.site-header');
   if (!header) return;
   window.addEventListener('scroll', () => {
+    const w = window.innerWidth;
     if (window.scrollY > 60) {
       header.classList.add('scrolled');
-      document.documentElement.style.setProperty('--header-h', '70px');
+      let h = '85px';
+      if (w <= 480) h = '60px';
+      else if (w <= 640) h = '70px';
+      else if (w <= 1024) h = '70px';
+      document.documentElement.style.setProperty('--header-h', h);
     } else {
       header.classList.remove('scrolled');
-      document.documentElement.style.setProperty('--header-h', '152px');
+      let h = '152px';
+      if (w <= 480) h = '86px';
+      else if (w <= 640) h = '96px';
+      else if (w <= 1024) h = '110px';
+      document.documentElement.style.setProperty('--header-h', h);
     }
   }, { passive: true });
 })();
