@@ -119,7 +119,7 @@ const BK_MENU = [
   },
   {
     tab: 'Shakes & Faloodas',
-    image: 'assets/Shakes-Faloodas.png',
+    image: 'assets/Shakes-Falooda.png',
     tagline: 'Thick, cold and absolutely irresistible.',
     columns: [
       {
