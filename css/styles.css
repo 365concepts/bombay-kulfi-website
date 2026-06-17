@@ -512,7 +512,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 /* ============ Meet Gulabo ============ */
 .gulabo {
   position: relative;
-  background-color: #e87ab4;
+  background-color: #edadc5;
   overflow: hidden;
   min-height: 700px;
 }
