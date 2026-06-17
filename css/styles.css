@@ -1060,7 +1060,7 @@ html, body {
   .nav-mobile a.btn { align-self: flex-start; margin-top: 10px; padding: 13px 22px; }
 
   /* Hero — podcast image on top, content below on mobile */
-  .hero { padding-top: 2px; }
+  .hero { padding-top: 24px; }
   .hero {
     background-image: repeating-conic-gradient(
       from 0deg at 50% 36vw,
@@ -1224,7 +1224,7 @@ html, body {
   #outlet-map { height: 460px; }
 
   /* Footer */
-  .footer-cols { grid-template-columns: 1fr; gap: 40px; padding-bottom: 32px; }
+  .footer-cols { grid-template-columns: 1fr; gap: 40px; padding-bottom: 48px; }
   .footer-logo { width: 280px; display: block; margin: 0 auto; }
   .footer-top  { align-items: center; }
   .footer { padding-top: 44px; }
