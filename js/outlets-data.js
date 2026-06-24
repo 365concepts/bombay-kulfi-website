@@ -404,7 +404,7 @@ const BK_OUTLETS = [
   {
     name: 'Vadapalani', city: 'Chennai', state: 'Tamil Nadu', zone: 'south',
     address: 'New No. 334, Old No. 242, Arcot Road, Near Vadapalani Post Office, Vadapalani, Chennai, Tamil Nadu 600026',
-    maps: 'https://maps.app.goo.gl/k2M2jHQjCM3FigHHA', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/k2M2jHQjCM3FigHHA', status: 'Open Now',
     lat: 13.1069, lng: 80.2527
   },
   {
