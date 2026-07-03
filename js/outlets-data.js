@@ -114,12 +114,6 @@ const BK_OUTLETS = [
     lat: 13.0817, lng: 80.2501
   },
   {
-    name: 'Temple Alwal Road', city: 'Hyderabad', state: 'Telangana', zone: 'south',
-    address: 'Temple Alwal Road, Old AlwalBeside True Value, Near Ambedkar Statue, Secunderabad, Telangana 500010',
-    maps: 'https://maps.app.goo.gl/f626poy1zU2CSFAj9', status: 'Open Now',
-    lat: 17.38, lng: 78.49
-  },
-  {
     name: 'Vallabh Vidyanagar', city: 'Anand', state: 'Gujarat', zone: 'west',
     address: 'Shop No.14, Sardar Patel Rd, Ketivadi, Vallabh Vidyanagar, Anand, Gujarat 388120',
     maps: 'https://maps.app.goo.gl/jGqgZEN7HeDJWHx9A', status: 'Open Now',
@@ -375,7 +369,7 @@ const BK_OUTLETS = [
     name: 'Ameerpet', city: 'Hyderabad', state: 'Telangana', zone: 'south',
     address: 'Shop no 1, Pancom Business Centre, Ameerpet Road, Yella Reddy Guda, Hyderabad, Telangana 500073',
     maps: 'https://maps.app.goo.gl/WkpVE981asGjP8iBA', status: 'Coming Soon',
-    lat: 17.3682, lng: 78.5008
+    lat: 17.38, lng: 78.49
   },
   {
     name: 'Royapettah', city: 'Chennai', state: 'Tamil Nadu', zone: 'south',
@@ -429,13 +423,19 @@ const BK_OUTLETS = [
     name: 'Gachibowli', city: 'Hyderabad', state: 'Telangana', zone: 'south',
     address: 'Shop No. 2, Mani Nagar, TNGOS Colony, Near Vihanga Back Gate, Gachibowli, Serilingampally, Hyderabad, Telangana 500032',
     maps: 'https://maps.app.goo.gl/GiLxt2hp2GW7MADP7', status: 'Coming Soon',
-    lat: 17.3817, lng: 78.4701
+    lat: 17.3682, lng: 78.5008
   },
   {
     name: 'Nacharam', city: 'Secunderabad', state: 'Telangana', zone: 'south',
     address: '4-7-27/A, Value Zone Hyper Mart, Raghavendra Nagar, Nacharam Main Road, Nacharam, Secunderabad, Telangana 500076',
-    maps: 'https://maps.app.goo.gl/zypFDT4eLrRKufvp7', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/zypFDT4eLrRKufvp7', status: 'Open Now',
     lat: 17.44, lng: 78.5
+  },
+  {
+    name: 'Ghaziabad', city: 'Ghaziabad', state: 'Uttar Pradesh', zone: 'north',
+    address: 'Shop No. GF-02, Plot No. 698, Niti Khand 1, Indirapuram, Landmark: Near Swarna Jayanti Park, Ghaziabad, Uttar Pradesh 201014',
+    maps: 'https://maps.app.goo.gl/kdAr9hzfixebmU9S9', status: 'Coming Soon',
+    lat: 28.6678, lng: 77.4497
   },
   /* ── Singapore ──────────────────────────────────────────────── */
   {
