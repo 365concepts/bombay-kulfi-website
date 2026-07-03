@@ -356,7 +356,7 @@ const BK_OUTLETS = [
   {
     name: 'Foreshore Road', city: 'Howrah', state: 'West Bengal', zone: 'east',
     address: '103/23, Foreshore Road, Choura Bustee, Shibpur, Near Pratap Petrol pump, Howrah, West Bengal 711102',
-    maps: 'https://maps.app.goo.gl/SiH2pY6VZX4S25zX6', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/SiH2pY6VZX4S25zX6', status: 'Open Now',
     lat: 22.5782, lng: 88.3208
   },
   {
