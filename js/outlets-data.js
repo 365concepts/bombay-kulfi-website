@@ -198,18 +198,6 @@ const BK_OUTLETS = [
     lat: 18.5082, lng: 73.8708
   },
   {
-    name: 'Ujjain', city: 'Ujjain', state: 'Madhya Pradesh', zone: 'west',
-    address: 'Shop No. 26/1-26/2, Ground Floor, Madanlal Sharma Marg, Kharakua Colony, Ujjain, Madhya Pradesh 456006',
-    maps: 'https://maps.app.goo.gl/DUNZVU4XjpbUt9QL9', status: 'Coming Soon',
-    lat: 23.18, lng: 75.78
-  },
-  {
-    name: 'Pathankot', city: 'Pathankot', state: 'Punjab', zone: 'north',
-    address: 'Shop No.90, Ground Floor, NH 44, Opposite to Rudransh Fuels Indian Oil, Pathankot, Punjab145001',
-    maps: 'https://maps.app.goo.gl/2qu2Yrazri67zES48', status: 'Coming Soon',
-    lat: 32.27, lng: 75.65
-  },
-  {
     name: 'Ulkanagari', city: 'Chhatrapati Sambhajinagar', state: 'Maharashtra', zone: 'west',
     address: 'Adinath Presidio, Shop no 2, Golvalkar Guruji MargOpposite Renuka Gas Agency, Shivaji Nagar, Garkheda Area, Ulkanagari Chhatrapati Sambhajinagar, Maharashtra 431009',
     maps: 'https://maps.app.goo.gl/mRtGfDKU2ehrje8i9', status: 'Open Now',
@@ -312,12 +300,6 @@ const BK_OUTLETS = [
     lat: 17.66, lng: 75.91
   },
   {
-    name: 'Safina Plaza', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
-    address: '84/85, Safina Plaza, Infantry Road, Tasker Town, Shivaji Nagar, Bengaluru, Karnataka 560001',
-    maps: 'https://share.google/9srkhIMHXXO4sv8xY', status: 'Open Now',
-    lat: 12.9847, lng: 77.609
-  },
-  {
     name: 'Porur', city: 'Chennai', state: 'Tamil Nadu', zone: 'south',
     address: 'Old No: 30, New No: 21, 1st Floor, Madras Food Walk, Arcot Road, Thirumurugan Nagar, Pour, Chennai, Tamil Nadu 600116',
     maps: 'https://maps.app.goo.gl/6ydpkrH1XCU5KPJY6', status: 'Open Now',
@@ -366,12 +348,6 @@ const BK_OUTLETS = [
     lat: 15.36, lng: 75.12
   },
   {
-    name: 'Ameerpet', city: 'Hyderabad', state: 'Telangana', zone: 'south',
-    address: 'Shop no 1, Pancom Business Centre, Ameerpet Road, Yella Reddy Guda, Hyderabad, Telangana 500073',
-    maps: 'https://maps.app.goo.gl/WkpVE981asGjP8iBA', status: 'Coming Soon',
-    lat: 17.38, lng: 78.49
-  },
-  {
     name: 'Royapettah', city: 'Chennai', state: 'Tamil Nadu', zone: 'south',
     address: '281, Lloyds Road, Avvai Shanmugam Salai, Next to AIADMK Office, Royapettah, Chennai, Tamil Nadu 600014',
     maps: 'https://share.google/OFH1MbNO6X53bAu89', status: 'Open Now',
@@ -390,12 +366,6 @@ const BK_OUTLETS = [
     lat: 18.4758, lng: 73.8787
   },
   {
-    name: 'Nerul', city: 'Mumbai', state: 'Maharashtra', zone: 'west',
-    address: 'Shop no. 12, Sai Sangh Co-operative Housing Society (CHS), Sector 28, Nerul, Navi Mumbai, Maharashtra 400706',
-    maps: 'https://maps.app.goo.gl/brCQZpBfjg1RHinC6', status: 'Coming Soon',
-    lat: 19.0682, lng: 72.8908
-  },
-  {
     name: 'Vadapalani', city: 'Chennai', state: 'Tamil Nadu', zone: 'south',
     address: 'New No. 334, Old No. 242, Arcot Road, Near Vadapalani Post Office, Vadapalani, Chennai, Tamil Nadu 600026',
     maps: 'https://maps.app.goo.gl/k2M2jHQjCM3FigHHA', status: 'Open Now',
@@ -406,6 +376,54 @@ const BK_OUTLETS = [
     address: '5, Holy Family Plaza, Vyas Marg, Below Third Space Gym, Raja Park, Jaipur, Rajasthan 302004',
     maps: 'https://maps.app.goo.gl/DG7fR83RBuWknTj2A', status: 'Open Now',
     lat: 26.8982, lng: 75.8008
+  },
+  {
+    name: 'Nacharam', city: 'Secunderabad', state: 'Telangana', zone: 'south',
+    address: '4-7-27/A, Value Zone Hyper Mart, Raghavendra Nagar, Nacharam Main Road, Nacharam, Secunderabad, Telangana 500076',
+    maps: 'https://maps.app.goo.gl/zypFDT4eLrRKufvp7', status: 'Open Now',
+    lat: 17.44, lng: 78.5
+  },
+  {
+    name: 'Commercial Street', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
+    address: 'Old No.266, New No.10, Narayana Pillai Street, Corporation Division Old No.54, New No.68, Commercial Street, Near Sukh Sugar, Bengaluru, Karnataka 560001',
+    maps: 'https://share.google/9srkhIMHXXO4sv8xY', status: 'Open Now',
+    lat: 12.9847, lng: 77.609
+  },
+  {
+    name: 'Gachibowli', city: 'Hyderabad', state: 'Telangana', zone: 'south',
+    address: 'Shop No. 2, Mani Nagar, TNGOS Colony, Near Vihanga Back Gate, Gachibowli, Serilingampally, Hyderabad, Telangana 500032',
+    maps: 'https://maps.app.goo.gl/GiLxt2hp2GW7MADP7', status: 'Coming Soon',
+    lat: 17.38, lng: 78.49
+  },
+  {
+    name: 'Bhartiya City Mall', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
+    address: '2nd Floor, Next to Amoeba, Bhartiya City Mall, Thanisandra Main Rd, Kannuru, Bengaluru, Karnataka 560064',
+    maps: 'https://share.google/oz11zcn3oAElSxhcU', status: 'Coming Soon',
+    lat: 12.9424, lng: 77.5852
+  },
+  {
+    name: 'Ujjain', city: 'Ujjain', state: 'Madhya Pradesh', zone: 'west',
+    address: 'Shop No. 26/1-26/2, Ground Floor, Madanlal Sharma Marg, Kharakua Colony, Ujjain, Madhya Pradesh 456006',
+    maps: 'https://maps.app.goo.gl/DUNZVU4XjpbUt9QL9', status: 'Coming Soon',
+    lat: 23.18, lng: 75.78
+  },
+  {
+    name: 'Pathankot', city: 'Pathankot', state: 'Punjab', zone: 'north',
+    address: 'Shop No.90, Ground Floor, NH 44, Opposite to Rudransh Fuels Indian Oil, Pathankot, Punjab145001',
+    maps: 'https://maps.app.goo.gl/2qu2Yrazri67zES48', status: 'Coming Soon',
+    lat: 32.27, lng: 75.65
+  },
+  {
+    name: 'Nerul', city: 'Mumbai', state: 'Maharashtra', zone: 'west',
+    address: 'Shop no. 12, Sai Sangh Co-operative Housing Society (CHS), Sector 28, Nerul, Navi Mumbai, Maharashtra 400706',
+    maps: 'https://maps.app.goo.gl/brCQZpBfjg1RHinC6', status: 'Coming Soon',
+    lat: 19.0682, lng: 72.8908
+  },
+  {
+    name: 'Ameerpet', city: 'Hyderabad', state: 'Telangana', zone: 'south',
+    address: 'Shop no 1, Pancom Business Centre, Ameerpet Road, Yella Reddy Guda, Hyderabad, Telangana 500073',
+    maps: 'https://maps.app.goo.gl/WkpVE981asGjP8iBA', status: 'Coming Soon',
+    lat: 17.3682, lng: 78.5008
   },
   {
     name: 'Tathawade', city: 'Pune', state: 'Maharashtra', zone: 'west',
@@ -420,22 +438,16 @@ const BK_OUTLETS = [
     lat: 18.5373, lng: 73.9133
   },
   {
-    name: 'Gachibowli', city: 'Hyderabad', state: 'Telangana', zone: 'south',
-    address: 'Shop No. 2, Mani Nagar, TNGOS Colony, Near Vihanga Back Gate, Gachibowli, Serilingampally, Hyderabad, Telangana 500032',
-    maps: 'https://maps.app.goo.gl/GiLxt2hp2GW7MADP7', status: 'Coming Soon',
-    lat: 17.3682, lng: 78.5008
-  },
-  {
-    name: 'Nacharam', city: 'Secunderabad', state: 'Telangana', zone: 'south',
-    address: '4-7-27/A, Value Zone Hyper Mart, Raghavendra Nagar, Nacharam Main Road, Nacharam, Secunderabad, Telangana 500076',
-    maps: 'https://maps.app.goo.gl/zypFDT4eLrRKufvp7', status: 'Open Now',
-    lat: 17.44, lng: 78.5
-  },
-  {
     name: 'Ghaziabad', city: 'Ghaziabad', state: 'Uttar Pradesh', zone: 'north',
     address: 'Shop No. GF-02, Plot No. 698, Niti Khand 1, Indirapuram, Landmark: Near Swarna Jayanti Park, Ghaziabad, Uttar Pradesh 201014',
     maps: 'https://maps.app.goo.gl/kdAr9hzfixebmU9S9', status: 'Coming Soon',
     lat: 28.6678, lng: 77.4497
+  },
+  {
+    name: 'Cuttack', city: 'Cuttack', state: 'Odisha', zone: 'east',
+    address: 'Plot No. 1B/59, CDA Sector 8, Landmark: Besides Flipkart office, Cuttack, Odisha 753014',
+    maps: 'https://maps.app.goo.gl/4quuxrtyhvQ6aBf66', status: 'Coming Soon',
+    lat: 20.46, lng: 85.88
   },
   /* ── Singapore ──────────────────────────────────────────────── */
   {
