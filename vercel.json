@@ -1,7 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "**/*", "use": "@vercel/static" }
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/locator", "destination": "/#locator", "permanent": true },
+    { "source": "/locator/", "destination": "/#locator", "permanent": true }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "/$1" }

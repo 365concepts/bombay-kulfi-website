@@ -1,14 +1,28 @@
-/* Force the page to start from the beginning on refresh/load */
+/* Scroll restoration & deep-link handling for /locator and anchor hashes */
 if (history.scrollRestoration) {
   history.scrollRestoration = 'manual';
 }
-window.scrollTo(0, 0);
-window.addEventListener('load', () => {
+
+function handleInitialScroll() {
+  const hash = window.location.hash;
+  const path = window.location.pathname;
+  if (hash === '#locator' || path.includes('/locator')) {
+    const el = document.getElementById('locator');
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      return;
+    }
+  } else if (hash && hash !== '#top') {
+    const el = document.querySelector(hash);
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      return;
+    }
+  }
   window.scrollTo(0, 0);
-});
-window.addEventListener('beforeunload', () => {
-  window.scrollTo(0, 0);
-});
+}
+
+window.addEventListener('load', handleInitialScroll);
 
 /* ==========================================================================
    Bombay Kulfi — Landing page interactions
