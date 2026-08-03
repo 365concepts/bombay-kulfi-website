@@ -1,6 +1,6 @@
 /* ==========================================================================
    Bombay Kulfi Ice Creams — Outlet Directory
-   Source: Store Locator Google Sheet (updated June 2025)
+   Source: Store Locator Google Sheet (updated August 2026)
    Zones: south | north | east | west
    ========================================================================== */
 
@@ -174,12 +174,6 @@ const BK_OUTLETS = [
     lat: 11.0217, lng: 76.9401
   },
   {
-    name: 'Whitefield', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
-    address: 'Pebble No. 3, Essensai 067, Whitefield - Hoskote Road, Kanamangala, Bengaluru, Karnataka 560067',
-    maps: 'https://maps.app.goo.gl/sqzrCsVmgfSRsknW8', status: 'Open Now',
-    lat: 12.9582, lng: 77.6008
-  },
-  {
     name: 'Churchgate', city: 'Mumbai', state: 'Maharashtra', zone: 'west',
     address: 'Shop no 18, Eros Theater Bldg, J.T.Road, Located in-La Glace Creamery, Churchgate, Mumbai, Maharashtra 400020',
     maps: 'https://maps.app.goo.gl/hsopjEkVCP6zxrf36', status: 'Open Now',
@@ -231,7 +225,7 @@ const BK_OUTLETS = [
     name: 'Kapali Mall', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
     address: 'Kapali Mall, 2nd Floor, Nataka Rathana, Gubbi Veeranna Road, Near Priyadarshini Restaurant, Gandhi Nagar, Bengaluru, Karnataka 560064',
     maps: 'https://maps.app.goo.gl/c37zSKMp4ydWo2sm9', status: 'Open Now',
-    lat: 12.9717, lng: 77.5701
+    lat: 12.9582, lng: 77.6008
   },
   {
     name: 'Phursungi', city: 'Pune', state: 'Maharashtra', zone: 'west',
@@ -385,21 +379,21 @@ const BK_OUTLETS = [
   },
   {
     name: 'Commercial Street', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
-    address: 'Old No.266, New No.10, Narayana Pillai Street, Corporation Division Old No.54, New No.68, Commercial Street, Near Sukh Sugar, Bengaluru, Karnataka 560001',
+    address: 'Old No.266, New No.10, Narayana Pillai Street, Corporation Division Old No.54, New No.68, Commercial Street, Near Shiv Sagar, Bengaluru, Karnataka 560001',
     maps: 'https://share.google/9srkhIMHXXO4sv8xY', status: 'Open Now',
-    lat: 12.9847, lng: 77.609
+    lat: 12.9717, lng: 77.5701
   },
   {
     name: 'Gachibowli', city: 'Hyderabad', state: 'Telangana', zone: 'south',
     address: 'Shop No. 2, Mani Nagar, TNGOS Colony, Near Vihanga Back Gate, Gachibowli, Serilingampally, Hyderabad, Telangana 500032',
-    maps: 'https://maps.app.goo.gl/GiLxt2hp2GW7MADP7', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/GiLxt2hp2GW7MADP7', status: 'Open Now',
     lat: 17.38, lng: 78.49
   },
   {
     name: 'Bhartiya City Mall', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
     address: '2nd Floor, Next to Amoeba, Bhartiya City Mall, Thanisandra Main Rd, Kannuru, Bengaluru, Karnataka 560064',
-    maps: 'https://share.google/oz11zcn3oAElSxhcU', status: 'Coming Soon',
-    lat: 12.9424, lng: 77.5852
+    maps: 'https://share.google/oz11zcn3oAElSxhcU', status: 'Open Now',
+    lat: 12.9847, lng: 77.609
   },
   {
     name: 'Ujjain', city: 'Ujjain', state: 'Madhya Pradesh', zone: 'west',
@@ -410,7 +404,7 @@ const BK_OUTLETS = [
   {
     name: 'Pathankot', city: 'Pathankot', state: 'Punjab', zone: 'north',
     address: 'Shop No.90, Ground Floor, NH 44, Opposite to Rudransh Fuels Indian Oil, Pathankot, Punjab145001',
-    maps: 'https://maps.app.goo.gl/2qu2Yrazri67zES48', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/2qu2Yrazri67zES48', status: 'Open Now',
     lat: 32.27, lng: 75.65
   },
   {
@@ -421,14 +415,14 @@ const BK_OUTLETS = [
   },
   {
     name: 'Ameerpet', city: 'Hyderabad', state: 'Telangana', zone: 'south',
-    address: 'Shop no 1, Pancom Business Centre, Ameerpet Road, Yella Reddy Guda, Hyderabad, Telangana 500073',
+    address: 'Shop no 1, Pancom Business Centre, Ameerpet Road, YellaReddyGuda, Hyderabad, Telangana 500073',
     maps: 'https://maps.app.goo.gl/WkpVE981asGjP8iBA', status: 'Coming Soon',
     lat: 17.3682, lng: 78.5008
   },
   {
     name: 'Tathawade', city: 'Pune', state: 'Maharashtra', zone: 'west',
     address: 'Shop No. 04, Merlin Elementa 2.0, Elementa Road, Near Azure Society, Tathawade, Pune, Maharashtra 411033',
-    maps: 'https://maps.app.goo.gl/D7D8m6utRdyxa49D7', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/D7D8m6utRdyxa49D7', status: 'Open Now',
     lat: 18.5416, lng: 73.8127
   },
   {
@@ -448,6 +442,48 @@ const BK_OUTLETS = [
     address: 'Plot No. 1B/59, CDA Sector 8, Landmark: Besides Flipkart office, Cuttack, Odisha 753014',
     maps: 'https://maps.app.goo.gl/4quuxrtyhvQ6aBf66', status: 'Coming Soon',
     lat: 20.46, lng: 85.88
+  },
+  {
+    name: 'Bhusari, Pune', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    address: 'Shop No.1, Ishana Phase 2, Bhusari Colony, Next to SBI ATM, Landmark: Opposite to Royal Enfield Showroom, Kothrud Pune, Maharashtra 411038',
+    maps: 'https://maps.app.goo.gl/Y2Tufd2V5eLXzeDe7', status: 'Coming Soon',
+    lat: 18.4677, lng: 73.8305
+  },
+  {
+    name: 'Shubash Nagar, New Delhi', city: 'New Delhi', state: 'Delhi', zone: 'north',
+    address: 'Shop No. 4,  8/1, Ground Floor, Main Market Marg, Block 8, Press Colony, Subhash Nagar, New Delhi 110027',
+    maps: 'https://maps.app.goo.gl/S3fy1Pito74BLBCs8', status: 'Coming Soon',
+    lat: 28.61, lng: 77.21
+  },
+  {
+    name: 'Greater Noida', city: 'Greater Noida', state: 'Uttar Pradesh', zone: 'north',
+    address: 'Plot no 21, Sector, LG 83, Lower Ground Floor, Block A, Inside Artha Mart, Tech Zone IV, LandMark: Near D-Mart, Greater Noida, Uttar Pradesh 201318',
+    maps: 'https://maps.app.goo.gl/YLSGEdPDsBzuXb858', status: 'Coming Soon',
+    lat: 28.47, lng: 77.5
+  },
+  {
+    name: 'Balewadi, Pune', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    address: 'Shop No. 2, Kundan Espacio, Yashoda Chowk, Opposite to Palazzo Society, Balewadi Pune, Maharashtra 411045',
+    maps: 'https://maps.app.goo.gl/iyEcKfKGMZtiU1BU8', status: 'Coming Soon',
+    lat: 18.5823, lng: 73.8455
+  },
+  {
+    name: 'Bhubaneswar', city: 'Bhubaneswar', state: 'Odisha', zone: 'east',
+    address: 'Plot No 234/399, Cuttack-Puri Bypass Road, Sisupalgarh, Landmark:Chancellor Grand Resort, Bhubaneswar, Odisha 751002',
+    maps: 'https://maps.app.goo.gl/TvReG9ED9m7w1reA8', status: 'Coming Soon',
+    lat: 20.3, lng: 85.82
+  },
+  {
+    name: 'Jamnagar', city: 'Jamnagar', state: 'Gujarat', zone: 'west',
+    address: 'Shop no. 3, Orchid Bloom, Airforce 2 Road, Shivam Park, Ajanta Society,  Near Samarpan Circle Jamnagar, Gujarat 361006',
+    maps: '', status: 'Coming Soon',
+    lat: 22.47, lng: 70.06
+  },
+  {
+    name: 'Kannamangala', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
+    address: 'Shop no 12, Whitefield - Hoskote Road, Opposite to Sandeep Vihar Apartment,Kannamangala, Bengaluru, Karnataka 560115',
+    maps: '', status: 'Coming Soon',
+    lat: 12.9424, lng: 77.5852
   },
   /* ── Singapore ──────────────────────────────────────────────── */
   {
