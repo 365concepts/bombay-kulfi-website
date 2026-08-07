@@ -452,7 +452,7 @@ const BK_OUTLETS = [
   {
     name: 'Shubash Nagar, New Delhi', city: 'New Delhi', state: 'Delhi', zone: 'north',
     address: 'Shop No. 4,  8/1, Ground Floor, Main Market Marg, Block 8, Press Colony, Subhash Nagar, New Delhi 110027',
-    maps: 'https://maps.app.goo.gl/S3fy1Pito74BLBCs8', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/S3fy1Pito74BLBCs8', status: 'Open Now',
     lat: 28.61, lng: 77.21
   },
   {
@@ -475,13 +475,19 @@ const BK_OUTLETS = [
   },
   {
     name: 'Jamnagar', city: 'Jamnagar', state: 'Gujarat', zone: 'west',
-    address: 'Shop no. 3, Orchid Bloom, Airforce 2 Road, Shivam Park, Ajanta Society,  Near Samarpan Circle Jamnagar, Gujarat 361006',
-    maps: '', status: 'Coming Soon',
+    address: 'Shop no. 3, Orchid Bloom, Airforce 2 Road, Shivam Park, Ajanta Society,  Near Samarpan Circle, Jamnagar, Gujarat 361006',
+    maps: 'https://maps.app.goo.gl/wYEqm3sTF7f2yHcm6', status: 'Coming Soon',
     lat: 22.47, lng: 70.06
   },
   {
+    name: 'Aundh', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    address: 'Shop No. 1, D Building, Chaitraban Residency, Seasons Road, Opp. Blue Tokai Coffee Roasters, Aundh, Pune, Maharashtra 411007',
+    maps: 'https://maps.app.goo.gl/g7FTRmUt8Snkbh126', status: 'Coming Soon',
+    lat: 18.4816, lng: 73.9162
+  },
+  {
     name: 'Kannamangala', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
-    address: 'Shop no 12, Whitefield - Hoskote Road, Opposite to Sandeep Vihar Apartment,Kannamangala, Bengaluru, Karnataka 560115',
+    address: 'Shop no 12, Whitefield - Hoskote Road, Opposite to Sandeep Vihar Apartment, Kannamangala, Bengaluru, Karnataka 560115',
     maps: '', status: 'Coming Soon',
     lat: 12.9424, lng: 77.5852
   },
