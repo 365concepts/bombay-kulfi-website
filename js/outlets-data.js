@@ -444,13 +444,13 @@ const BK_OUTLETS = [
     lat: 20.46, lng: 85.88
   },
   {
-    name: 'Bhusari, Pune', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    name: 'Bhusari', city: 'Pune', state: 'Maharashtra', zone: 'west',
     address: 'Shop No.1, Ishana Phase 2, Bhusari Colony, Next to SBI ATM, Landmark: Opposite to Royal Enfield Showroom, Kothrud Pune, Maharashtra 411038',
     maps: 'https://maps.app.goo.gl/Y2Tufd2V5eLXzeDe7', status: 'Coming Soon',
     lat: 18.4677, lng: 73.8305
   },
   {
-    name: 'Shubash Nagar, New Delhi', city: 'New Delhi', state: 'Delhi', zone: 'north',
+    name: 'Shubash Nagar', city: 'New Delhi', state: 'Delhi', zone: 'north',
     address: 'Shop No. 4,  8/1, Ground Floor, Main Market Marg, Block 8, Press Colony, Subhash Nagar, New Delhi 110027',
     maps: 'https://maps.app.goo.gl/S3fy1Pito74BLBCs8', status: 'Open Now',
     lat: 28.61, lng: 77.21
@@ -462,7 +462,7 @@ const BK_OUTLETS = [
     lat: 28.47, lng: 77.5
   },
   {
-    name: 'Balewadi, Pune', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    name: 'Balewadi', city: 'Pune', state: 'Maharashtra', zone: 'west',
     address: 'Shop No. 2, Kundan Espacio, Yashoda Chowk, Opposite to Palazzo Society, Balewadi Pune, Maharashtra 411045',
     maps: 'https://maps.app.goo.gl/iyEcKfKGMZtiU1BU8', status: 'Coming Soon',
     lat: 18.5823, lng: 73.8455
@@ -482,14 +482,50 @@ const BK_OUTLETS = [
   {
     name: 'Aundh', city: 'Pune', state: 'Maharashtra', zone: 'west',
     address: 'Shop No. 1, D Building, Chaitraban Residency, Seasons Road, Opp. Blue Tokai Coffee Roasters, Aundh, Pune, Maharashtra 411007',
-    maps: 'https://maps.app.goo.gl/g7FTRmUt8Snkbh126', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/g7FTRmUt8Snkbh126', status: 'Open Now',
     lat: 18.4816, lng: 73.9162
   },
   {
     name: 'Kannamangala', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
     address: 'Shop no 12, Whitefield - Hoskote Road, Opposite to Sandeep Vihar Apartment, Kannamangala, Bengaluru, Karnataka 560115',
-    maps: '', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/KMdVgpsSiguTArvh7', status: 'Coming Soon',
     lat: 12.9424, lng: 77.5852
+  },
+  {
+    name: 'Ponda', city: 'Goa', state: 'Goa', zone: 'west',
+    address: 'Shop G-1, Royal Classic Building, near Vithoba Temple, Upper Bazar, Antruj Nagar, Ponda, Goa 403401',
+    maps: 'https://share.google/FsShrrGMVVFHPTBcp', status: 'Coming Soon',
+    lat: 15.2582, lng: 73.9708
+  },
+  {
+    name: 'Avenue Mall', city: 'Erode', state: 'Tamil Nadu', zone: 'south',
+    address: 'Kiosk No. 05, Located In: Avenues Mall, Tex Valley, Salem - Kochi Hwy, Chithode, Erode, Tamil Nadu 638102',
+    maps: 'https://share.google/mAcigQgcyfsrE9mHK', status: 'Coming Soon',
+    lat: 11.3282, lng: 77.7308
+  },
+  {
+    name: 'Vajarahalli', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
+    address: 'Plot No 12&13, Khatha No 896/62/1, 100 Feet Rd, Vajarahalli, Vajarahalli Village, Bengaluru City Municipal Corporation Layout, Uttarahalli Hobli, Bengaluru, Karnataka 560109',
+    maps: 'https://share.google/GgtCxncqKXTJ0ebmc', status: 'Coming Soon',
+    lat: 12.9969, lng: 77.5727
+  },
+  {
+    name: 'Himayatnagar', city: 'Hyderabad', state: 'Andhra Pradesh', zone: 'south',
+    address: 'Ground floor, 4th Shop, Om Sai Towers 3-6-168/7, Hyderguda Main Rd, Avanti Nagar, Himayatnagar, Hyderabad, Telangana 500029',
+    maps: 'https://share.google/hHK8PlKCU6dp6zc2G', status: 'Coming Soon',
+    lat: 17.3817, lng: 78.4701
+  },
+  {
+    name: 'M5 Mall', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
+    address: '3rd floor, Bombay Kulfi Ice Creams, M5 Ecity Mall, Veerasandra Industrial Area, 1, Hosur Rd, opposite to Electronic City Flyover, BTM Phase 1, Phase II, Electronic City, Hebbagodi, Bengaluru, Karnataka 560100',
+    maps: 'https://share.google/V1FBtFWOs5EWHTROE', status: 'Coming Soon',
+    lat: 12.9609, lng: 77.6248
+  },
+  {
+    name: 'Kivale', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    address: 'Ground Floor, Shop No/A1/6, Inside Gini Vivante Phase 1, Kivale Road, Kivale, Pimpri-Chinchwad, Pune, Maharashtra 412101',
+    maps: 'https://maps.app.goo.gl/EGeSQ9stgv9jJaNQ8', status: 'Coming Soon',
+    lat: 18.5097, lng: 73.7887
   },
   /* ── Singapore ──────────────────────────────────────────────── */
   {
