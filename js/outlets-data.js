@@ -434,7 +434,7 @@ const BK_OUTLETS = [
   {
     name: 'Ghaziabad', city: 'Ghaziabad', state: 'Uttar Pradesh', zone: 'north',
     address: 'Shop No. GF-02, Plot No. 698, Niti Khand 1, Indirapuram, Landmark: Near Swarna Jayanti Park, Ghaziabad, Uttar Pradesh 201014',
-    maps: 'https://maps.app.goo.gl/kdAr9hzfixebmU9S9', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/kdAr9hzfixebmU9S9', status: 'Open Now',
     lat: 28.6678, lng: 77.4497
   },
   {
@@ -488,7 +488,7 @@ const BK_OUTLETS = [
   {
     name: 'Kannamangala', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
     address: 'Shop no 12, Whitefield - Hoskote Road, Opposite to Sandeep Vihar Apartment, Kannamangala, Bengaluru, Karnataka 560115',
-    maps: 'https://maps.app.goo.gl/KMdVgpsSiguTArvh7', status: 'Coming Soon',
+    maps: 'https://maps.app.goo.gl/KMdVgpsSiguTArvh7', status: 'Open Now',
     lat: 12.9424, lng: 77.5852
   },
   {
@@ -517,7 +517,7 @@ const BK_OUTLETS = [
   },
   {
     name: 'M5 Mall', city: 'Bengaluru', state: 'Karnataka', zone: 'south',
-    address: '3rd floor, Bombay Kulfi Ice Creams, M5 Ecity Mall, Veerasandra Industrial Area, 1, Hosur Rd, opposite to Electronic City Flyover, BTM Phase 1, Phase II, Electronic City, Hebbagodi, Bengaluru, Karnataka 560100',
+    address: 'M5 Ecity Mall, 3rd floor, Veerasandra Industrial Area, 1, Hosur Rd, opposite to Electronic City Flyover, BTM Phase 1, Phase II, Electronic City, Hebbagodi, Bengaluru, Karnataka 560100',
     maps: 'https://share.google/V1FBtFWOs5EWHTROE', status: 'Coming Soon',
     lat: 12.9609, lng: 77.6248
   },
@@ -526,6 +526,24 @@ const BK_OUTLETS = [
     address: 'Ground Floor, Shop No/A1/6, Inside Gini Vivante Phase 1, Kivale Road, Kivale, Pimpri-Chinchwad, Pune, Maharashtra 412101',
     maps: 'https://maps.app.goo.gl/EGeSQ9stgv9jJaNQ8', status: 'Coming Soon',
     lat: 18.5097, lng: 73.7887
+  },
+  {
+    name: 'Kondhwa', city: 'Pune', state: 'Maharashtra', zone: 'west',
+    address: 'Shop No 1, Ground Floor, Below Simran Seashells Apartment, Opposite to Butterwala, Salunkhe Vihar Road, Kondhwa, Pune, Maharashtra 411048',
+    maps: 'https://maps.app.goo.gl/yCFGxYLfQ21Xk2B96', status: 'Coming Soon',
+    lat: 18.5789, lng: 73.9081
+  },
+  {
+    name: 'Firozpur Jhirka', city: 'Firozpur Jhirka', state: 'Haryana', zone: 'north',
+    address: 'Chainage 63 LHS, Delhi Mumbai Expressway, Near Indian Oil Petrol Bunk & Haldiram\'s, Firozpur Jhirka, Haryana 121001',
+    maps: 'https://maps.app.goo.gl/wLAAqipG2fCoLjwr8', status: 'Coming Soon',
+    lat: 27.79, lng: 76.95
+  },
+  {
+    name: 'Dindoli', city: 'Surat', state: 'Gujarat', zone: 'west',
+    address: 'Shop No 10, Below Prayosha Jewel Apartments, Opposite to DMart, Near Madhuram Circle, Dindoli, Surat 394210',
+    maps: 'https://maps.app.goo.gl/AHGcw6xFsToXs6oc7', status: 'Coming Soon',
+    lat: 21.1582, lng: 72.8408
   },
   /* ── Singapore ──────────────────────────────────────────────── */
   {
