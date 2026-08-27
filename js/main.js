@@ -275,7 +275,7 @@ const BK_MENU = [
   renderMenu(0);
 })();
 
-/* ============ 3. Store Locator (list + Leaflet map) ============ */
+/* ============ 3. Store Locator (Google Maps + Live Sheet Sync) ============ */
 (function () {
   const searchInput = document.getElementById('locator-search');
   const listEl = document.getElementById('locator-list');
@@ -283,89 +283,170 @@ const BK_MENU = [
   const chips = document.querySelectorAll('.chip');
 
   let activeZone = 'all';
+  let outlets = typeof getInitialOutlets === 'function' ? getInitialOutlets() : (typeof BK_OUTLETS !== 'undefined' ? BK_OUTLETS : []);
+  let map = null;
+  let markers = [];
+  let infoWindow = null;
 
-  /* ----- Map setup ----- */
-  const map = L.map('outlet-map', { scrollWheelZoom: true });
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  // Retro-warm map styling matching Bombay Kulfi branding
+  const BK_MAP_STYLES = [
+    { elementType: "geometry", stylers: [{ color: "#fbf8ef" }] },
+    { elementType: "labels.text.stroke", stylers: [{ color: "#ffffff" }, { weight: 3 }] },
+    { elementType: "labels.text.fill", stylers: [{ color: "#222223" }] },
+    {
+      featureType: "administrative",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#c9c2af" }]
+    },
+    {
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#222223" }, { weight: 600 }]
+    },
+    {
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#6e6a60" }]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [{ color: "#e3edd9" }]
+    },
+    {
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [{ color: "#ffffff" }]
+    },
+    {
+      featureType: "road",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#ebd9c3" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [{ color: "#ffeed6" }]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [{ color: "#f2cca0" }]
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [{ color: "#cee4e4" }]
+    },
+    {
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [{ color: "#4f7575" }]
+    }
+  ];
 
-  // "Tiruppur, Tiruppur" → "Tiruppur" when branch name is just the city
+  // SVG Pins: Orange for Open Now (#DC582A), Purple for Coming Soon (#7B2869)
+  const PIN_SVG_OPEN = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
+      <defs>
+        <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+      </defs>
+      <path d="M14 1C6.82 1 1 6.82 1 14c0 9.2 13 21 13 21s13-11.8 13-21C27 6.82 21.18 1 14 1z" fill="#DC582A" stroke="#ffffff" stroke-width="1.8" filter="url(#s)"/>
+      <circle cx="14" cy="13" r="5" fill="#FFFFFF"/>
+      <circle cx="14" cy="13" r="2.5" fill="#DC582A"/>
+    </svg>
+  `);
+
+  const PIN_SVG_SOON = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36">
+      <defs>
+        <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.35"/>
+        </filter>
+      </defs>
+      <path d="M14 1C6.82 1 1 6.82 1 14c0 9.2 13 21 13 21s13-11.8 13-21C27 6.82 21.18 1 14 1z" fill="#7B2869" stroke="#ffffff" stroke-width="1.8" filter="url(#s)"/>
+      <circle cx="14" cy="13" r="5" fill="#FFFFFF"/>
+      <circle cx="14" cy="13" r="2.5" fill="#7B2869"/>
+    </svg>
+  `);
+
   function outletLabel(o) {
     return o.name.toLowerCase() === o.city.toLowerCase() ? o.city : o.name + ', ' + o.city;
   }
 
-  function pinIcon(comingSoon) {
-    return L.divIcon({
-      className: '',
-      html: `<div class="bk-pin-dot${comingSoon ? ' bk-pin-dot-soon' : ''}"></div>`,
-      iconSize: [14, 14],
-      iconAnchor: [7, 7],
-      popupAnchor: [0, -10]
+  function getPopupHtml(o) {
+    const isSoon = o.status && o.status !== 'Open Now';
+    const badgeHtml = isSoon ? `<span class="badge-soon">${o.status}</span>` : '';
+    const mapsLink = o.maps ? `<a class="bk-popup-link" href="${o.maps}" target="_blank" rel="noopener">Get Directions ↗</a>` : '';
+
+    return `
+      <div class="bk-popup">
+        <p class="bk-popup-title">${outletLabel(o)}${badgeHtml}</p>
+        <p class="bk-popup-addr">${o.address || ''}</p>
+        ${mapsLink}
+      </div>
+    `;
+  }
+
+  function createMarkers() {
+    if (!map || !window.google || !google.maps) return;
+
+    // Clear existing markers
+    markers.forEach(m => m.setMap(null));
+    markers = [];
+
+    outlets.forEach((o, i) => {
+      const isSoon = o.status && o.status !== 'Open Now';
+      const marker = new google.maps.Marker({
+        position: { lat: o.lat, lng: o.lng },
+        map: map,
+        title: outletLabel(o),
+        icon: {
+          url: isSoon ? PIN_SVG_SOON : PIN_SVG_OPEN,
+          scaledSize: new google.maps.Size(26, 34),
+          anchor: new google.maps.Point(13, 34)
+        }
+      });
+
+      marker.addListener('click', () => {
+        infoWindow.setContent(getPopupHtml(o));
+        infoWindow.open(map, marker);
+      });
+
+      markers.push(marker);
     });
   }
 
-  function popupContent(o) {
-    const box = document.createElement('div');
-    box.className = 'bk-popup';
-
-    const title = document.createElement('p');
-    title.className = 'bk-popup-title';
-    title.textContent = outletLabel(o);
-    box.appendChild(title);
-
-    if (o.status && o.status !== 'Open Now') {
-      const badge = document.createElement('span');
-      badge.className = 'badge-soon';
-      badge.textContent = o.status;
-      box.appendChild(badge);
-    }
-
-    const addr = document.createElement('p');
-    addr.className = 'bk-popup-addr';
-    addr.textContent = o.address;
-    box.appendChild(addr);
-
-    if (o.maps) {
-      const link = document.createElement('a');
-      link.className = 'bk-popup-link';
-      link.href = o.maps;
-      link.target = '_blank';
-      link.rel = 'noopener';
-      link.textContent = 'Get Directions ↗';
-      box.appendChild(link);
-    }
-    return box;
-  }
-
-  // One marker per outlet, reused across filter changes
-  const markers = BK_OUTLETS.map((o) => {
-    const m = L.marker([o.lat, o.lng], { icon: pinIcon(o.status !== 'Open Now') });
-    m.bindPopup(popupContent(o));
-    return m;
-  });
-
-  /* ----- Filtering ----- */
   function matchesFilter(o) {
-    const query = searchInput.value.trim().toLowerCase();
+    const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
     const zoneOk = activeZone === 'all' || o.zone === activeZone;
     const textOk = !query ||
       o.name.toLowerCase().includes(query) ||
       o.city.toLowerCase().includes(query) ||
-      o.state.toLowerCase().includes(query);
+      o.state.toLowerCase().includes(query) ||
+      (o.address && o.address.toLowerCase().includes(query));
     return zoneOk && textOk;
   }
 
-  function render() {
+  function renderListAndMarkers() {
+    if (!listEl || !countEl) return;
+
     const matched = [];
-    BK_OUTLETS.forEach((o, i) => {
-      if (matchesFilter(o)) {
-        matched.push(i);
-        if (!map.hasLayer(markers[i])) markers[i].addTo(map);
-      } else if (map.hasLayer(markers[i])) {
-        map.removeLayer(markers[i]);
+    const bounds = (window.google && google.maps) ? new google.maps.LatLngBounds() : null;
+
+    outlets.forEach((o, i) => {
+      const isMatch = matchesFilter(o);
+      if (markers[i]) {
+        if (isMatch) {
+          markers[i].setMap(map);
+          if (bounds) bounds.extend(markers[i].getPosition());
+        } else {
+          markers[i].setMap(null);
+        }
       }
+      if (isMatch) matched.push(i);
     });
 
     countEl.textContent = matched.length;
@@ -376,12 +457,15 @@ const BK_MENU = [
       li.className = 'no-results';
       li.textContent = 'No outlets found — Gulaabo is on her way!';
       listEl.appendChild(li);
-      map.setView([21.5, 79], 4);
+      if (map) {
+        map.setCenter({ lat: 21.5, lng: 79 });
+        map.setZoom(4);
+      }
       return;
     }
 
     matched.forEach((i) => {
-      const o = BK_OUTLETS[i];
+      const o = outlets[i];
       const li = document.createElement('li');
       li.tabIndex = 0;
       li.setAttribute('role', 'button');
@@ -389,6 +473,7 @@ const BK_MENU = [
       const cityName = document.createElement('span');
       cityName.className = 'outlet-city';
       cityName.textContent = outletLabel(o);
+
       if (o.status && o.status !== 'Open Now') {
         const badge = document.createElement('span');
         badge.className = 'badge-soon';
@@ -401,10 +486,17 @@ const BK_MENU = [
       addr.textContent = o.address || '';
 
       li.append(cityName, addr);
+
       const focusOutlet = () => {
-        map.flyTo([o.lat, o.lng], 13, { duration: 0.8 });
-        markers[i].openPopup();
+        if (!map || !markers[i]) return;
+        map.panTo({ lat: o.lat, lng: o.lng });
+        map.setZoom(14);
+        if (infoWindow) {
+          infoWindow.setContent(getPopupHtml(o));
+          infoWindow.open(map, markers[i]);
+        }
       };
+
       li.addEventListener('click', focusOutlet);
       li.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); focusOutlet(); }
@@ -412,21 +504,108 @@ const BK_MENU = [
       listEl.appendChild(li);
     });
 
-    const bounds = L.latLngBounds(matched.map((i) => [BK_OUTLETS[i].lat, BK_OUTLETS[i].lng]));
-    map.fitBounds(bounds, { padding: [45, 45], maxZoom: 12 });
+    if (map && bounds && !bounds.isEmpty()) {
+      map.fitBounds(bounds, { top: 45, right: 45, bottom: 45, left: 45 });
+      // Prevent zooming in too close when only 1 marker matches
+      const listener = google.maps.event.addListener(map, 'idle', () => {
+        if (map.getZoom() > 14) map.setZoom(14);
+        google.maps.event.removeListener(listener);
+      });
+    }
   }
 
+  // Google Maps Initialization Callback
+  window.initBKMap = function () {
+    function tryInit() {
+      const mapContainer = document.getElementById('outlet-map');
+      if (!mapContainer) {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', tryInit);
+        }
+        return;
+      }
+      if (!window.google || !window.google.maps) return;
+      if (map) return; // already initialized
+
+      map = new google.maps.Map(mapContainer, {
+        center: { lat: 21.5, lng: 79 },
+        zoom: 5,
+        styles: BK_MAP_STYLES,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        zoomControl: true,
+        scrollwheel: true
+      });
+
+      infoWindow = new google.maps.InfoWindow({
+        maxWidth: 280
+      });
+
+      createMarkers();
+      renderListAndMarkers();
+    }
+    tryInit();
+  };
+
+  // Fallback if Google Maps script loaded before main.js executed
+  if (window.google && window.google.maps && !map) {
+    window.initBKMap();
+  } else {
+    window.addEventListener('load', () => {
+      if (window.google && window.google.maps && !map) {
+        window.initBKMap();
+      }
+    });
+  }
+
+  // Setup UI event listeners
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
       chips.forEach((c) => c.classList.remove('is-active'));
       chip.classList.add('is-active');
       activeZone = chip.dataset.zone;
-      render();
+      renderListAndMarkers();
     });
   });
 
-  searchInput.addEventListener('input', render);
-  render();
+  if (searchInput) {
+    searchInput.addEventListener('input', renderListAndMarkers);
+  }
+
+  // Handle fresh outlets from background Google Sheets sync
+  function onFreshOutlets(freshOutlets) {
+    if (!Array.isArray(freshOutlets) || freshOutlets.length === 0) return;
+    outlets = freshOutlets;
+    createMarkers();
+    renderListAndMarkers();
+  }
+
+  // Secret admin trigger by clicking count (forces live sheet sync)
+  if (countEl) {
+    countEl.style.cursor = 'pointer';
+    countEl.title = 'Click to check latest stores from Google Sheets';
+    countEl.addEventListener('click', () => {
+      countEl.textContent = '...';
+      if (typeof syncOutletsFromSheet === 'function') {
+        syncOutletsFromSheet((fresh) => {
+          onFreshOutlets(fresh);
+        }, true);
+      }
+    });
+  }
+
+  // Check URL parameters for force refresh flag (?refresh=1 or ?sync=1)
+  const urlParams = new URLSearchParams(window.location.search);
+  const forceRefresh = urlParams.has('refresh') || urlParams.has('sync');
+
+  // Launch background sync (non-blocking, 0ms delay to UI)
+  if (typeof syncOutletsFromSheet === 'function') {
+    syncOutletsFromSheet(onFreshOutlets, forceRefresh);
+  }
+
+  // Initial list rendering if Google Maps is still loading asynchronously
+  renderListAndMarkers();
 })();
 
 /* ============ 4. Hero video — scrub on desktop, autoplay on mobile ============ */
