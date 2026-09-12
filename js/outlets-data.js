@@ -29,17 +29,6 @@ const BK_OUTLETS =[
         "lng":  76.9708
     },
     {
-        "name":  "Tiruppur",
-        "city":  "Tiruppur",
-        "state":  "Tamil Nadu",
-        "zone":  "south",
-        "address":  "Shop No.337, Avinashi - Tiruppur Road, Near Federal Bank, Bungalow stop, Ganga Nagar, Ramaiya Colony, Tiruppur, 641603",
-        "maps":  "https://maps.app.goo.gl/s9Prr2SMhWhBFibu8",
-        "status":  "Open Now",
-        "lat":  11.11,
-        "lng":  77.34
-    },
-    {
         "name":  "Kathalbari",
         "city":  "Darbhanga",
         "state":  "Bihar",
@@ -183,11 +172,11 @@ const BK_OUTLETS =[
         "lng":  80.27
     },
     {
-        "name":  "Indira Nagar",
+        "name":  "Adyar",
         "city":  "Chennai",
         "state":  "Tamil Nadu",
         "zone":  "south",
-        "address":  "4/2, 10th Cross Street, Indira Nagar, Chennai, Tamil Nadu 600020",
+        "address":  "4/2, 10th Cross Street, Indira Nagar, Adyar, Chennai, Tamil Nadu 600020",
         "maps":  "https://maps.app.goo.gl/9LHW5Wg834tyUvFa7",
         "status":  "Open Now",
         "lat":  13.0682,
@@ -436,17 +425,6 @@ const BK_OUTLETS =[
         "lng":  73.879
     },
     {
-        "name":  "Vidhyanagar Road",
-        "city":  "Anand",
-        "state":  "Gujarat",
-        "zone":  "west",
-        "address":  "Shop No-1, A.K Foodies, Anand Vidhyanagar Road, Opp. Town Hall, Beside: The Tazza Pizza, Anand, Gujarat 388001",
-        "maps":  "https://maps.app.goo.gl/ttZNky6r6uwVPzxYA",
-        "status":  "Open Now",
-        "lat":  22.5482,
-        "lng":  72.9608
-    },
-    {
         "name":  "Moshi",
         "city":  "Pune",
         "state":  "Maharashtra",
@@ -535,18 +513,7 @@ const BK_OUTLETS =[
         "lng":  75.91
     },
     {
-        "name":  "Porur",
-        "city":  "Chennai",
-        "state":  "Tamil Nadu",
-        "zone":  "south",
-        "address":  "Old No: 30, New No: 21, 1st Floor, Madras Food Walk, Arcot Road, Thirumurugan Nagar, Pour, Chennai, Tamil Nadu 600116",
-        "maps":  "https://maps.app.goo.gl/6ydpkrH1XCU5KPJY6",
-        "status":  "Open Now",
-        "lat":  13.0947,
-        "lng":  80.289
-    },
-    {
-        "name":  "Kothrud",
+        "name":  "Dahanukar Colony, Kothrud",
         "city":  "Pune",
         "state":  "Maharashtra",
         "zone":  "west",
@@ -630,8 +597,8 @@ const BK_OUTLETS =[
         "address":  "281, Lloyds Road, Avvai Shanmugam Salai, Next to AIADMK Office, Royapettah, Chennai, Tamil Nadu 600014",
         "maps":  "https://share.google/OFH1MbNO6X53bAu89",
         "status":  "Open Now",
-        "lat":  13.0524,
-        "lng":  80.2652
+        "lat":  13.0947,
+        "lng":  80.289
     },
     {
         "name":  "Nigdi",
@@ -663,8 +630,8 @@ const BK_OUTLETS =[
         "address":  "New No. 334, Old No. 242, Arcot Road, Near Vadapalani Post Office, Vadapalani, Chennai, Tamil Nadu 600026",
         "maps":  "https://maps.app.goo.gl/k2M2jHQjCM3FigHHA",
         "status":  "Open Now",
-        "lat":  13.1069,
-        "lng":  80.2527
+        "lat":  13.0524,
+        "lng":  80.2652
     },
     {
         "name":  "Raja Park",
@@ -750,20 +717,9 @@ const BK_OUTLETS =[
         "zone":  "west",
         "address":  "Shop no. 12, Sai Sangh Co-operative Housing Society (CHS), Sector 28, Nerul, Navi Mumbai, Maharashtra 400706",
         "maps":  "https://maps.app.goo.gl/brCQZpBfjg1RHinC6",
-        "status":  "Coming Soon",
+        "status":  "Open Now",
         "lat":  19.0682,
         "lng":  72.8908
-    },
-    {
-        "name":  "Ameerpet",
-        "city":  "Hyderabad",
-        "state":  "Telangana",
-        "zone":  "south",
-        "address":  "Shop no 1, Pancom Business Centre, Ameerpet Road, YellaReddyGuda, Hyderabad, Telangana 500073",
-        "maps":  "https://maps.app.goo.gl/WkpVE981asGjP8iBA",
-        "status":  "Coming Soon",
-        "lat":  17.3682,
-        "lng":  78.5008
     },
     {
         "name":  "Tathawade",
@@ -777,17 +733,6 @@ const BK_OUTLETS =[
         "lng":  73.8127
     },
     {
-        "name":  "Yavatmal",
-        "city":  "Pune",
-        "state":  "Maharashtra",
-        "zone":  "west",
-        "address":  "Shop No G3, Nagar Parishad Complex, Opposite Nagar Bhawan, Panch Kandil Chauk, Yavatmal, Pune, Maharashtra 445001",
-        "maps":  "https://maps.app.goo.gl/TUFf8LeJ66ZAisdK8",
-        "status":  "Coming Soon",
-        "lat":  18.5373,
-        "lng":  73.9133
-    },
-    {
         "name":  "Ghaziabad",
         "city":  "Ghaziabad",
         "state":  "Uttar Pradesh",
@@ -795,8 +740,8 @@ const BK_OUTLETS =[
         "address":  "Shop No. GF-02, Plot No. 698, Niti Khand 1, Indirapuram, Landmark: Near Swarna Jayanti Park, Ghaziabad, Uttar Pradesh 201014",
         "maps":  "https://maps.app.goo.gl/kdAr9hzfixebmU9S9",
         "status":  "Open Now",
-        "lat":  28.67,
-        "lng":  77.45
+        "lat":  28.6414,
+        "lng":  77.3658
     },
     {
         "name":  "Cuttack",
@@ -810,15 +755,15 @@ const BK_OUTLETS =[
         "lng":  85.88
     },
     {
-        "name":  "Bhusari",
+        "name":  "Bhusari Colony, Kothrud",
         "city":  "Pune",
         "state":  "Maharashtra",
         "zone":  "west",
         "address":  "Shop No.1, Ishana Phase 2, Bhusari Colony, Next to SBI ATM, Landmark: Opposite to Royal Enfield Showroom, Kothrud Pune, Maharashtra 411038",
         "maps":  "https://maps.app.goo.gl/Y2Tufd2V5eLXzeDe7",
-        "status":  "Coming Soon",
-        "lat":  18.4677,
-        "lng":  73.8305
+        "status":  "Open Now",
+        "lat":  18.5373,
+        "lng":  73.9133
     },
     {
         "name":  "Shubash Nagar",
@@ -849,9 +794,9 @@ const BK_OUTLETS =[
         "zone":  "west",
         "address":  "Shop No. 2, Kundan Espacio, Yashoda Chowk, Opposite to Palazzo Society, Balewadi Pune, Maharashtra 411045",
         "maps":  "https://maps.app.goo.gl/iyEcKfKGMZtiU1BU8",
-        "status":  "Coming Soon",
-        "lat":  18.5823,
-        "lng":  73.8455
+        "status":  "Open Now",
+        "lat":  18.4677,
+        "lng":  73.8305
     },
     {
         "name":  "Bhubaneswar",
@@ -883,8 +828,8 @@ const BK_OUTLETS =[
         "address":  "Shop No. 1, D Building, Chaitraban Residency, Seasons Road, Opp. Blue Tokai Coffee Roasters, Aundh, Pune, Maharashtra 411007",
         "maps":  "https://maps.app.goo.gl/g7FTRmUt8Snkbh126",
         "status":  "Open Now",
-        "lat":  18.4816,
-        "lng":  73.9162
+        "lat":  18.5823,
+        "lng":  73.8455
     },
     {
         "name":  "Kannamangala",
@@ -938,8 +883,8 @@ const BK_OUTLETS =[
         "address":  "Ground floor, 4th Shop, Om Sai Towers 3-6-168/7, Hyderguda Main Rd, Avanti Nagar, Himayatnagar, Hyderabad, Telangana 500029",
         "maps":  "https://share.google/hHK8PlKCU6dp6zc2G",
         "status":  "Coming Soon",
-        "lat":  17.3817,
-        "lng":  78.4701
+        "lat":  17.3682,
+        "lng":  78.5008
     },
     {
         "name":  "M5 Mall",
@@ -948,7 +893,7 @@ const BK_OUTLETS =[
         "zone":  "south",
         "address":  "M5 Ecity Mall, 3rd floor, Veerasandra Industrial Area, 1, Hosur Rd, opposite to Electronic City Flyover, BTM Phase 1, Phase II, Electronic City, Hebbagodi, Bengaluru, Karnataka 560100",
         "maps":  "https://share.google/V1FBtFWOs5EWHTROE",
-        "status":  "Coming Soon",
+        "status":  "Open Now",
         "lat":  12.9609,
         "lng":  77.6248
     },
@@ -960,8 +905,8 @@ const BK_OUTLETS =[
         "address":  "Ground Floor, Shop No/A1/6, Inside Gini Vivante Phase 1, Kivale Road, Kivale, Pimpri-Chinchwad, Pune, Maharashtra 412101",
         "maps":  "https://maps.app.goo.gl/EGeSQ9stgv9jJaNQ8",
         "status":  "Coming Soon",
-        "lat":  18.5097,
-        "lng":  73.7887
+        "lat":  18.4816,
+        "lng":  73.9162
     },
     {
         "name":  "Kondhwa",
@@ -969,10 +914,10 @@ const BK_OUTLETS =[
         "state":  "Maharashtra",
         "zone":  "west",
         "address":  "Shop No 1, Ground Floor, Below Simran Seashells Apartment, Opposite to Butterwala, Salunkhe Vihar Road, Kondhwa, Pune, Maharashtra 411048",
-        "maps":  "https://maps.app.goo.gl/yCFGxYLfQ21Xk2B96",
+        "maps":  "https://maps.app.goo.gl/c1WrELkxru4vuvzA6",
         "status":  "Coming Soon",
-        "lat":  18.5789,
-        "lng":  73.9081
+        "lat":  18.5097,
+        "lng":  73.7887
     },
     {
         "name":  "Firozpur Jhirka",
@@ -980,7 +925,7 @@ const BK_OUTLETS =[
         "state":  "Haryana",
         "zone":  "north",
         "address":  "Chainage 63 LHS, Delhi Mumbai Expressway, Near Indian Oil Petrol Bunk \u0026 Haldiram\u0027s, Firozpur Jhirka, Haryana 121001",
-        "maps":  "https://maps.app.goo.gl/wLAAqipG2fCoLjwr8",
+        "maps":  "https://maps.app.goo.gl/urjF9S3Ci2pCbBVo6",
         "status":  "Coming Soon",
         "lat":  28.46,
         "lng":  77.03
@@ -991,7 +936,7 @@ const BK_OUTLETS =[
         "state":  "Gujarat",
         "zone":  "west",
         "address":  "Shop No 10, Below Prayosha Jewel Apartments, Opposite to DMart, Near Madhuram Circle, Dindoli, Surat 394210",
-        "maps":  "https://maps.app.goo.gl/AHGcw6xFsToXs6oc7",
+        "maps":  "https://maps.app.goo.gl/rdrSM38cw3DTv1tq7",
         "status":  "Coming Soon",
         "lat":  21.1582,
         "lng":  72.8408

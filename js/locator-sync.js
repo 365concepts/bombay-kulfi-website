@@ -7,7 +7,7 @@
    ========================================================================== */
 
 const BK_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1ITOa7SWMK3JfHMn3n5tdF99SFrhBkqvZUaWt3hiVXzc/export?format=csv';
-const BK_CACHE_KEY = 'bk_outlets_cache_v2';
+const BK_CACHE_KEY = 'bk_outlets_cache_v3';
 const BK_CACHE_TIME_KEY = 'bk_outlets_last_sync';
 
 // Known coordinates for Indian cities and International locations
@@ -33,7 +33,8 @@ const BK_CITY_COORDS = {
   'dhanbad': [23.80, 86.43],
   'erode': [11.34, 77.72],
   'firozpur jhirka': [27.79, 76.95],
-  'ghaziabad': [28.67, 77.45],
+  'ghaziabad': [28.6414, 77.3658],
+  'indirapuram': [28.6414, 77.3658],
   'goa': [15.29, 73.98],
   'greater noida': [28.47, 77.50],
   'gurugram': [28.46, 77.03],
